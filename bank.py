@@ -12,7 +12,11 @@ BASES = {
  'C02': ('c10_02.json', 'r12b.mp4', 'en', 0.0, 10.6, 2.1, (4.0, 4.65), 5.65),
  'C04': ('c10_04.json', 'r19b.mp4', 'en', 0.0, 10.6, 2.3, (4.5, 5.2), 5.3),
  'Z1':  ('Z1.json',     'r14b.mp4', 'de', 0.0, 10.6, 2.0, (3.9, 4.8), 4.9),
+ # Código AMG63 (solo @reductionsxhacoo). Grabación de Pol del 7 nov, dirección tapada.
+ 'AMG1': ('AMG1.json',  'amg1b.mp4', 'fr', 0.0, 11.5, 2.4, (4.6, 5.4), 7.0, 'amg63'),
 }
+# Bases por código: las que no indican código son de POLE14
+CODE_OF = lambda bid: BASES[bid][8] if len(BASES[bid]) > 8 else 'pole14'
 # Preferencia de grabación por idioma del vídeo (primero las que tienen la app en ese idioma)
 PREF = {'fr': ['A', 'Z1', 'C02', 'B', 'X4', 'C', 'D', 'Y1', 'X2', 'C04', 'FW'],
         'es': ['B', 'C', 'D', 'Y1', 'X4', 'X2', 'C02', 'C04'],
@@ -72,6 +76,8 @@ HOOKS = {
  },
 }
 CODE = {'fr': ['n_fr_c1'], 'es': ['n_es_c0', 'n_es_c1'], 'en': ['cp_en_code']}
+CODE_AMG = {'fr': ['amg_fr_c1', 'amg_fr_c2']}
+CODE_TXT = {'pole14': 'POLE14', 'amg63': 'AMG63'}
 OFF_EN = 'cp_en_off'
 ENDS = {'fr': ['n_fr_e0', 'n_fr_e1', 'n_fr_e2', 'n_fr_e3', 'cp_fr_e2', 'cp_fr_e3', 'cp_fr_e4', 'cp_fr_xe0', 'cp_fr_xe3'],
         'es': ['n_es_e0', 'n_es_e1', 'n_es_e2', 'n_es_e3', 'cp_es_e1', 'cp_es_e2', 'cp_es_e3', 'cp_es_e5', 'cp_es_xe0'],

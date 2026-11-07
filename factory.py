@@ -12,7 +12,7 @@ from PIL import ImageFont
 
 ROOT = os.path.dirname(os.path.abspath(__file__)) + '/'
 sys.path.insert(0, ROOT)
-from bank import BASES, PREF, HOOKS, CODE, OFF_EN, ENDS, END_TXT, SONGS, CAPTION, EMOJI
+from bank import BASES, PREF, HOOKS, CODE, CODE_AMG, CODE_TXT, CODE_OF, OFF_EN, ENDS, END_TXT, SONGS, CAPTION, EMOJI
 
 DUR = {k: v[0] for k, v in json.load(open(ROOT + 'voices/clip_texts.json')).items()}
 USED_F = ROOT + 'used.json'
@@ -49,7 +49,7 @@ def interp(rm, t):
 
 
 def build(bid, fmt, lang, hook, code, end, end_txt):
-    bfile, rec, ui, shift, tot0, hook_end, flash, end_t0 = BASES[bid]
+    bfile, rec, ui, shift, tot0, hook_end, flash, end_t0 = BASES[bid][:8]
     base = json.load(open(ROOT + 'bases/' + bfile))
     rm = [list(p) for p in base['rmap']]
     if shift:
@@ -86,16 +86,16 @@ def build(bid, fmt, lang, hook, code, end, end_txt):
     else:
         sz = fit(hB, 108); hook_txt = tk(0, hook_end, 930, sz, hB); tile_y = 930 - int(1.62 * sz) - 95
     marks.append({"kind": "emoji", "t0": 0.0, "t1": hook_end, "name": "hacoo", "x": 540, "y": tile_y, "size": 190 if fmt == 'A' else 180})
-    texts = [hook_txt, tk(flash[0], flash[1], 1000, 100, ["POLE14"]), tk(end_t0, tot, 520, 64, end_txt)]
+    texts = [hook_txt, tk(flash[0], flash[1], 1000, 100, [CODE_TXT[CODE_OF(bid)]]), tk(end_t0, tot, 520, 64, end_txt)]
     return rec, {"tot": tot, "handle": "", "linear": True, "rmap": cut, "texts": texts, "marks": marks, "voice": voice}
 
 
-def caption(lang, hook):
+def caption(lang, hook, code='pole14'):
     a = HOOKS[lang][hook][0]
     s = ' '.join(a)
     emo = re.findall(r'\|emo:(\w+)\|', s)
     s = re.sub(r'\s*\|emo:\w+\|', '', s).strip().lower()
-    return f"{s} {''.join(EMOJI.get(e, '') for e in emo)} {CAPTION[lang]}".replace('  ', ' ')
+    return f"{s} {''.join(EMOJI.get(e, '') for e in emo)} {CAPTION[lang].replace('POLE14', CODE_TXT[code])}".replace('  ', ' ')
 
 
 def hook_ok(flags, day):
@@ -116,6 +116,7 @@ def main():
     ap.add_argument('--n', type=int, default=1)
     ap.add_argument('--date', default=None, help='fecha de publicación prevista (para ganchos de temporada)')
     ap.add_argument('--tag', default='')
+    ap.add_argument('--code', default='pole14', choices=['pole14', 'amg63'], help='amg63 solo para @reductionsxhacoo')
     a = ap.parse_args()
     day = datetime.date.fromisoformat(a.date) if a.date else datetime.date.today()
     used = load_used(); keys = set(used['keys'])
@@ -130,19 +131,21 @@ def main():
     n_log = len(used['log'])
     for i in range(a.n):
         best = None
-        for bid in PREF[a.lang]:
+        cands = [b for b in BASES if CODE_OF(b) == a.code] if a.code != 'pole14' else PREF[a.lang]
+        for bid in cands:
             for h in hooks:
                 k = f"{bid}|{h}|{a.fmt}"
                 if k in keys:
                     continue
-                score = hook_count.get(h, 0) * 3 + base_count.get(bid, 0) + PREF[a.lang].index(bid) * 0.3
+                score = hook_count.get(h, 0) * 3 + base_count.get(bid, 0) + cands.index(bid) * 0.3
                 if best is None or score < best[0]:
                     best = (score, bid, h, k)
         if not best:
             print('sin combinaciones nuevas', file=sys.stderr); break
         _, bid, h, k = best
         j = n_log + i
-        code = CODE[a.lang][j % len(CODE[a.lang])]
+        cl = CODE_AMG[a.lang] if a.code == 'amg63' else CODE[a.lang]
+        code = cl[j % len(cl)]
         end = ENDS[a.lang][j % len(ENDS[a.lang])]
         etxt = END_TXT[a.lang][j % len(END_TXT[a.lang])]
         song = SONGS[j % len(SONGS)]
@@ -155,7 +158,7 @@ def main():
         subprocess.run([sys.executable, ROOT + 'engine/mux3.py', v, sp, o, ROOT + f'music/{song}.mp3', '0'], check=True, stdout=subprocess.DEVNULL)
         os.remove(v)
         meta = {'file': f'out/{name}.mp4', 'lang': a.lang, 'fmt': a.fmt, 'base': bid, 'hook': h, 'song': song,
-                'caption': caption(a.lang, h), 'tot': spec['tot'], 'made': datetime.datetime.now().isoformat(timespec='seconds')}
+                'caption': caption(a.lang, h, a.code), 'code': a.code, 'tot': spec['tot'], 'made': datetime.datetime.now().isoformat(timespec='seconds')}
         json.dump(meta, open(ROOT + f'out/{name}.meta.json', 'w'), ensure_ascii=False, indent=1)
         keys.add(k); used['keys'].append(k); used['log'].append(meta)
         hook_count[h] = hook_count.get(h, 0) + 1; base_count[bid] = base_count.get(bid, 0) + 1
