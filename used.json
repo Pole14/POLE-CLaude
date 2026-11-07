@@ -32,7 +32,15 @@
   "C02|cp_es_h6|B",
   "C04|cp_en_h3|B",
   "FW|n_fr_h0|B",
-  "C04|cp_en_h1|A"
+  "C04|cp_en_h1|A",
+  "Z1|cp_fr_h5|A",
+  "A|cp_fr_t5|B",
+  "Z1|n_fr_h6|A",
+  "B|cp_es_h3|B",
+  "C|cp_es_h5|A",
+  "D|cp_es_h7|B",
+  "Y1|cp_es_h9|A",
+  "B|cp_es_h2|B"
  ],
  "log": [
   {
@@ -56,6 +64,94 @@
    "caption": "how to stop overpaying on hacoo 💸 POLE14 = 14% off (up to €14) + free delivery #hacoo #hacoocode #discountcode #hacco",
    "tot": 10.6,
    "made": "2026-11-07T22:18:43"
+  },
+  {
+   "file": "out/2026-11-16_fr_A_Z1_cp_fr_h5.mp4",
+   "lang": "fr",
+   "fmt": "A",
+   "base": "Z1",
+   "hook": "cp_fr_h5",
+   "song": "lolita",
+   "caption": "code promo hacoo 2026 qui marche ✅ POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "tot": 10.6,
+   "made": "2026-11-07T22:59:06"
+  },
+  {
+   "file": "out/2026-11-18_fr_B_A_cp_fr_t5.mp4",
+   "lang": "fr",
+   "fmt": "B",
+   "base": "A",
+   "hook": "cp_fr_t5",
+   "song": "parisienne",
+   "caption": "code hacoo mis à jour 2026 ✅ POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "tot": 10.8,
+   "made": "2026-11-07T22:59:50"
+  },
+  {
+   "file": "out/2026-11-20_fr_A_Z1_n_fr_h6.mp4",
+   "lang": "fr",
+   "fmt": "A",
+   "base": "Z1",
+   "hook": "n_fr_h6",
+   "song": "free",
+   "caption": "code hacoo black friday 🔥 POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "tot": 10.6,
+   "made": "2026-11-07T23:00:31"
+  },
+  {
+   "file": "out/2026-11-14_es_B_B_cp_es_h3.mp4",
+   "lang": "es",
+   "fmt": "B",
+   "base": "B",
+   "hook": "cp_es_h3",
+   "song": "arrochadeira",
+   "caption": "el código de hacoo que funciona este invierno ❄️ POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
+   "tot": 10.8,
+   "made": "2026-11-07T23:01:16"
+  },
+  {
+   "file": "out/2026-11-16_es_A_C_cp_es_h5.mp4",
+   "lang": "es",
+   "fmt": "A",
+   "base": "C",
+   "hook": "cp_es_h5",
+   "song": "es666",
+   "caption": "cupón hacoo 2026 que sí funciona ✅ POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
+   "tot": 10.83,
+   "made": "2026-11-07T23:01:57"
+  },
+  {
+   "file": "out/2026-11-18_es_B_D_cp_es_h7.mp4",
+   "lang": "es",
+   "fmt": "B",
+   "base": "D",
+   "hook": "cp_es_h7",
+   "song": "gone",
+   "caption": "así compro en hacoo más barato 💸 POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
+   "tot": 10.6,
+   "made": "2026-11-07T23:02:50"
+  },
+  {
+   "file": "out/2026-11-20_es_A_Y1_cp_es_h9.mp4",
+   "lang": "es",
+   "fmt": "A",
+   "base": "Y1",
+   "hook": "cp_es_h9",
+   "song": "ninao",
+   "caption": "no compres en hacoo sin este código 👀 POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
+   "tot": 10.6,
+   "made": "2026-11-07T23:03:35"
+  },
+  {
+   "file": "out/2026-11-22_es_B_B_cp_es_h2.mp4",
+   "lang": "es",
+   "fmt": "B",
+   "base": "B",
+   "hook": "cp_es_h2",
+   "song": "coqueta",
+   "caption": "código hacoo black friday 2026 🔥 POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
+   "tot": 10.81,
+   "made": "2026-11-07T23:04:21"
   }
  ]
 }
