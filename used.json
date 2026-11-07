@@ -1,0 +1,61 @@
+{
+ "keys": [
+  "FW|n_fr_h3|A",
+  "A|n_fr_h5|A",
+  "D|n_es_h0|A",
+  "Y1|n_es_h1|A",
+  "C|n_es_h3|A",
+  "X2|cp_en_h6|A",
+  "C02|cp_en_h4|A",
+  "C02|cp_fr_h7|A",
+  "C|cp_fr_h3|A",
+  "D|n_fr_h1|A",
+  "Y1|n_fr_h7|A",
+  "A|n_fr_h4|A",
+  "C|n_es_h4|A",
+  "FW|cp_fr_h4|A",
+  "Z1|cp_fr_h6|A",
+  "D|cp_es_t2|A",
+  "Y1|cp_es_h6|A",
+  "X2|cp_es_t10|A",
+  "X4|cp_es_t12|A",
+  "B|cp_es_h0|A",
+  "B|n_fr_h4|B",
+  "X4|n_fr_h3|B",
+  "A|cp_fr_h4|B",
+  "Z1|cp_fr_h1|B",
+  "C04|cp_fr_h8|B",
+  "X2|cp_fr_t2|B",
+  "B|cp_es_h1|B",
+  "X4|cp_es_h4|B",
+  "X2|cp_es_h8|B",
+  "C02|cp_es_h6|B",
+  "C04|cp_en_h3|B",
+  "FW|n_fr_h0|B",
+  "C04|cp_en_h1|A"
+ ],
+ "log": [
+  {
+   "file": "out/2026-11-13_fr_B_FW_n_fr_h0.mp4",
+   "lang": "fr",
+   "fmt": "B",
+   "base": "FW",
+   "hook": "n_fr_h0",
+   "song": "ninao",
+   "caption": "meilleur code promo hacoo ça marche ✅ POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "tot": 10.6,
+   "made": "2026-11-07T22:17:49"
+  },
+  {
+   "file": "out/2026-11-13_en_A_C04_cp_en_h1.mp4",
+   "lang": "en",
+   "fmt": "A",
+   "base": "C04",
+   "hook": "cp_en_h1",
+   "song": "coqueta",
+   "caption": "how to stop overpaying on hacoo 💸 POLE14 = 14% off (up to €14) + free delivery #hacoo #hacoocode #discountcode #hacco",
+   "tot": 10.6,
+   "made": "2026-11-07T22:18:43"
+  }
+ ]
+}
