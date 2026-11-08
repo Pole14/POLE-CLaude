@@ -13,6 +13,7 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
 sys.path.insert(0, ROOT + 'engine')
 import tkfont
+from tktext import render_block
 
 SRC, FX, OUT = sys.argv[1:4]
 fx = json.load(open(FX))
@@ -55,7 +56,7 @@ def block(lines, size, style):
     key = (json.dumps(lines), size, style)
     if key not in _C:
         lines = [l if l.strip() else ' ' for l in lines]
-        _C[key] = tkfont.box(lines, size, EMO) if style == 'box' else tkfont.outline(lines, size, EMO)
+        _C[key] = render_block(lines, size, 'box', EMO, 600) if style == 'box' else tkfont.outline(lines, size, EMO)
     return _C[key]
 
 

@@ -1,6 +1,7 @@
 """Texto nativo de TikTok (fuente "Classic") — calibrado el 8 nov 2026 contra un vídeo 1080p real.
-Fuente: Figtree variable a peso 650 (la que más se parece a la Classic de TikTok).
-- outline(lines, size, EMO): letras blancas con contorno negro (grosor = size/14), interlineado 1.0.
+Fuente: TikTok Sans variable (la oficial). Contorno: peso 690, opsz 36, trazo size/13, interlineado 1.1, interletrado -1,8 %.
+La caja blanca NO se toca: sigue con tktext.render_block (TikTok Sans 600), Pol la da por perfecta.
+- outline(lines, size, EMO): letras blancas con contorno negro .
 - box(lines, size, EMO): estilo "fondo blanco": cada línea en su caja blanca redondeada, texto negro.
 Las líneas aceptan emojis propios con |emo:nombre|.
 """
@@ -9,13 +10,13 @@ from PIL import Image, ImageDraw, ImageFont
 
 D = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
 _F = {}
-WGHT = 650
+WGHT = 690
 
 
 def font(size, w=WGHT):
     k = (size, w)
     if k not in _F:
-        f = ImageFont.truetype(D + 'fonts/figtree_var.ttf', size); f.set_variation_by_axes([w]); _F[k] = f
+        f = ImageFont.truetype(D + 'fonts/tiktoksans_var.ttf', size); f.set_variation_by_axes([36, 100, w, 0]); _F[k] = f
     return _F[k]
 
 
@@ -28,19 +29,26 @@ def parse(line):
     return out
 
 
-def _layout(line, f, size):
+TR = -0.018  # interletrado (fracción del tamaño), la Classic va algo más apretada
+
+
+def _layout(line, f, size, tr=0.0):
     items = []; x = 0.0
     for k, v in parse(line):
         if k == 't':
-            items.append(('t', v, x)); x += f.getlength(v)
+            if tr:
+                for ch in v:
+                    items.append(('t', ch, x)); x += f.getlength(ch) + tr * size
+            else:
+                items.append(('t', v, x)); x += f.getlength(v)
         else:
             items.append(('e', v, x + size * 0.04)); x += size * 1.08
     return items, x
 
 
-def outline(lines, size, EMO, sd=14):
-    f = font(size); st = max(2, round(size / sd)); asc, desc = f.getmetrics(); lh = int(size * 1.0)
-    rows = [_layout(l, f, size) for l in lines]
+def outline(lines, size, EMO, sd=13):
+    f = font(size); st = max(2, round(size / sd)); asc, desc = f.getmetrics(); lh = int(size * 1.1)
+    rows = [_layout(l, f, size, TR) for l in lines]
     W = int(max(w for _, w in rows) + 2 * st + 24); H = int(lh * (len(rows) - 1) + asc + desc + 2 * st + 24)
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     for i, (items, w) in enumerate(rows):
