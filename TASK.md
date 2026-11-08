@@ -13,11 +13,11 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 |---|---|---|---|
 | @reductionsxhacoo | 7841739 | fr | 2/día (la más fuerte) |
 | @hacoorabatt | 7905293 | es + en | 2/día: 1 es y 1 en |
-| @chinahero01 | 7690746 | es (en días alternos en) | 1/día |
-| @code.promo.hacoo | 7801996 | fr | 1 cada 2 días |
-| @hacoocupones | 7801775 | es | PAUSADA hasta el lun 16 nov 2026 (orden de Pol): NO programar nada antes de esa fecha |
+| @chinahero01 | 7690746 | es (en días alternos en) | 2/día |
+| @code.promo.hacoo | 7801996 | fr | 2/día |
+| @hacoocupones | 7801775 | es | PAUSADA hasta el lun 16 nov 2026 (orden de Pol): NO programar nada antes de esa fecha; desde el 16 nov, 2/día |
 
-Si `getBrandSettings` muestra una marca nueva con TikTok y nombre UK, trátala como `en`, 2/día.
+Si `getBrandSettings` muestra una marca nueva con TikTok y nombre UK, trátala como `en`, 2/día. Regla de Pol (8 nov 2026): ninguna cuenta publica solo 1 vídeo al día; mínimo 2/día, con horas distintas y vídeos siempre distintos.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
 
 ## 3. Elegir formato
