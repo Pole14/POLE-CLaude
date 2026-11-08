@@ -59,7 +59,10 @@ def block(lines, size, style):
     return _C[key]
 
 
-SEO = outline_block([fx['seo']], 34, EMO) if fx.get('seo') else None
+SEO = None
+if fx.get('seo'):  # línea SEO pequeña arriba del todo, medio transparente (que no moleste)
+    SEO = outline_block([fx['seo']], fx.get('seo_size', 28), EMO)
+    a = SEO.getchannel('A').point(lambda v: int(v * fx.get('seo_alpha', 0.55))); SEO.putalpha(a)
 tot = fx['tot']; n = int(round(tot * FPS))
 dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f'fps={FPS},crop=886:1920:97:0,scale={W}:{FULL_H}:flags=lanczos',
                         '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
@@ -81,7 +84,17 @@ for i in range(n):
                 fr.alpha_composite(e, (int(W / 2 + (j - 1) * sz * 1.05 - sz / 2), int(CK['y'] - sz / 2)))
     for tx in fx.get('texts', []):
         if not (tx['t0'] <= t < tx['t1']): continue
-        st = tx.get('style', STYLE); lines = tx['lines']
+        st = tx.get('style', STYLE)
+        if tx.get('stack'):  # gancho apilado: [[línea, tamaño], ...] cada línea a su tamaño, centrado
+            y = tx['y']
+            for ln, sz in tx['stack']:
+                im = block([ln], sz, st)
+                if im.width > tx.get('maxw', 1000):
+                    r = tx.get('maxw', 1000) / im.width; im = im.resize((tx.get('maxw', 1000), int(im.height * r)), Image.LANCZOS)
+                fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(y)))
+                y += im.height - (int(sz * 0.30) if st == 'ol' else int(sz * 0.12))
+            continue
+        lines = tx['lines']
         if tx.get('tw'):
             ntot = sum(len(tokens(l)) for l in lines)
             k = int(ntot * min(1.0, (t - tx['t0']) / tx['tw']))
