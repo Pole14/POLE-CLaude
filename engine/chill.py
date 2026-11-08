@@ -12,7 +12,7 @@ from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
 sys.path.insert(0, ROOT + 'engine')
-from tktext import render_block, outline_block
+import tkfont
 
 SRC, FX, OUT = sys.argv[1:4]
 fx = json.load(open(FX))
@@ -55,13 +55,13 @@ def block(lines, size, style):
     key = (json.dumps(lines), size, style)
     if key not in _C:
         lines = [l if l.strip() else ' ' for l in lines]
-        _C[key] = render_block(lines, size, 'box', EMO, 600) if style == 'box' else outline_block(lines, size, EMO)
+        _C[key] = tkfont.box(lines, size, EMO) if style == 'box' else tkfont.outline(lines, size, EMO)
     return _C[key]
 
 
 SEO = None
 if fx.get('seo'):  # línea SEO pequeña arriba del todo, medio transparente (que no moleste)
-    SEO = outline_block([fx['seo']], fx.get('seo_size', 28), EMO)
+    SEO = tkfont.outline([fx['seo']], fx.get('seo_size', 28), EMO)
     a = SEO.getchannel('A').point(lambda v: int(v * fx.get('seo_alpha', 0.55))); SEO.putalpha(a)
 tot = fx['tot']; n = int(round(tot * FPS))
 dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f'fps={FPS},crop=886:1920:97:0,scale={W}:{FULL_H}:flags=lanczos',
@@ -91,8 +91,9 @@ for i in range(n):
                 im = block([ln], sz, st)
                 if im.width > tx.get('maxw', 1000):
                     r = tx.get('maxw', 1000) / im.width; im = im.resize((tx.get('maxw', 1000), int(im.height * r)), Image.LANCZOS)
-                fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(y)))
-                y += im.height - (int(sz * 0.30) if st == 'ol' else int(sz * 0.12))
+                bb = im.getchannel('A').getbbox() or (0, 0, im.width, im.height)
+                fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(y - bb[1])))
+                y += bb[3] - bb[1] + tx.get('gap', 10)
             continue
         lines = tx['lines']
         if tx.get('tw'):
