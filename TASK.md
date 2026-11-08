@@ -15,7 +15,7 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 | @hacoorabatt | 7905293 | es + en | 2/día: 1 es y 1 en |
 | @chinahero01 | 7690746 | es (en días alternos en) | 1/día |
 | @code.promo.hacoo | 7801996 | fr | 1 cada 2 días |
-| @hacoocupones | 7801775 | es | 1 cada 2 días |
+| @hacoocupones | 7801775 | es | PAUSADA hasta el lun 16 nov 2026 (orden de Pol): NO programar nada antes de esa fecha |
 
 Si `getBrandSettings` muestra una marca nueva con TikTok y nombre UK, trátala como `en`, 2/día.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
