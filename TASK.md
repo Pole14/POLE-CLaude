@@ -12,12 +12,15 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 | Cuenta | blogId | Idioma(s) | Ritmo |
 |---|---|---|---|
 | @reductionsxhacoo | 7841739 | fr | 2/día (la más fuerte) |
-| @hacoorabatt | 7905293 | es + en | 2/día: 1 es y 1 en |
-| @chinahero01 | 7690746 | es (en días alternos en) | 2/día |
-| @code.promo.hacoo | 7801996 | fr | 2/día |
-| @hacoocupones | 7801775 | es | PAUSADA hasta el lun 16 nov 2026 (orden de Pol): NO programar nada antes de esa fecha; desde el 16 nov, 2/día |
+| @hacoorabatt | 7905293 | es + en | PAUSADA hasta que exista el cupón real de 120 € |
+| @chinahero01 | 7690746 | es (en días alternos en) | PAUSADA hasta que exista el cupón real de 120 € |
+| @code.promo.hacoo | 7801996 | fr | PAUSADA hasta que exista el cupón real de 120 € |
+| @hacoocupones | 7801775 | es | PAUSADA hasta que exista el cupón real de 120 € (y nunca antes del lun 16 nov 2026) |
+| @90hacoo14 | 7802274 | es | SOLO vídeos del cupón de 120 €. Nada hasta que exista el cupón real |
 
-Si `getBrandSettings` muestra una marca nueva con TikTok y nombre UK, trátala como `en`, 2/día. Regla de Pol (8 nov 2026): ninguna cuenta publica solo 1 vídeo al día; mínimo 2/día, con horas distintas y vídeos siempre distintos.
+ORDEN DE POL (8 nov 2026, 22:31): mientras no exista el cupón real de 120 €, la fábrica SOLO programa en @reductionsxhacoo (2/día). En las cuentas pausadas no programes nada y no saques sus borradores (Pol sube ahí sus propios vídeos). Cuando el cupón de 120 € exista de verdad (Pol pasa la grabación con el cupón aplicado y sus condiciones, y queda apuntado en `claude/receta-viral.md`), TODAS las cuentas pasan a vídeos del cupón de 120 €, 2/día. Hasta entonces, nunca hagas vídeos de cupones de 100/120/200 €.
+
+Si `getBrandSettings` muestra una marca nueva, no programes nada en ella hasta que Pol diga para qué es. Regla de Pol (8 nov 2026): ninguna cuenta publica solo 1 vídeo al día; mínimo 2/día, con horas distintas y vídeos siempre distintos.
 Revisión del finde (8 nov 2026): gana el gancho -90 % (bienvenida) y "code promo + mes" publicados por la mañana (6-9 h): 923, 818 y 1.346 visitas. Por la tarde-noche rinden menos en FR (344-787). Carrusel EN (239) y haul (344) flojos. En cada cuenta, 1 de los 2 vídeos diarios va entre 6 y 9 h y, cuando haya grabación de -90 %, prioriza ese gancho.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
 
