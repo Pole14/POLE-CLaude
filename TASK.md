@@ -18,6 +18,7 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 | @hacoocupones | 7801775 | es | PAUSADA hasta el lun 16 nov 2026 (orden de Pol): NO programar nada antes de esa fecha; desde el 16 nov, 2/día |
 
 Si `getBrandSettings` muestra una marca nueva con TikTok y nombre UK, trátala como `en`, 2/día. Regla de Pol (8 nov 2026): ninguna cuenta publica solo 1 vídeo al día; mínimo 2/día, con horas distintas y vídeos siempre distintos.
+Revisión del finde (8 nov 2026): gana el gancho -90 % (bienvenida) y "code promo + mes" publicados por la mañana (6-9 h): 923, 818 y 1.346 visitas. Por la tarde-noche rinden menos en FR (344-787). Carrusel EN (239) y haul (344) flojos. En cada cuenta, 1 de los 2 vídeos diarios va entre 6 y 9 h y, cuando haya grabación de -90 %, prioriza ese gancho.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
 
 ## 3. Elegir formato
