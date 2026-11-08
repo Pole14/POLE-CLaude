@@ -56,13 +56,15 @@ def block(lines, size, style):
     key = (json.dumps(lines), size, style)
     if key not in _C:
         lines = [l if l.strip() else ' ' for l in lines]
-        _C[key] = render_block(lines, size, 'box', EMO, 600) if style == 'box' else tkfont.outline(lines, size, EMO)
+        if style == 'tt': _C[key] = tkfont.tt(lines, size, EMO)
+        elif style == 'box': _C[key] = render_block(lines, size, 'box', EMO, 600)
+        else: _C[key] = tkfont.outline(lines, size, EMO)
     return _C[key]
 
 
 SEO = None
 if fx.get('seo'):  # línea SEO pequeña arriba del todo, medio transparente (que no moleste)
-    SEO = tkfont.outline([fx['seo']], fx.get('seo_size', 28), EMO)
+    SEO = tkfont.tt([fx['seo']], fx.get('seo_size', 28), EMO, maxw=1040, stroke=2) if STYLE == 'tt' else tkfont.outline([fx['seo']], fx.get('seo_size', 28), EMO)
     a = SEO.getchannel('A').point(lambda v: int(v * fx.get('seo_alpha', 0.55))); SEO.putalpha(a)
 tot = fx['tot']; n = int(round(tot * FPS))
 dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f'fps={FPS},crop=886:1920:97:0,scale={W}:{FULL_H}:flags=lanczos',
@@ -102,6 +104,7 @@ for i in range(n):
             k = int(ntot * min(1.0, (t - tx['t0']) / tx['tw']))
             if k < ntot:
                 lines = partial(lines, max(1, k)); lines[-1] += '_'
+                lines = [l + '*' if l.count('*') % 2 else l for l in lines]
         im = block(lines, tx['size'], st)
         if im.width > 980:
             r = 980 / im.width; im = im.resize((980, int(im.height * r)), Image.LANCZOS)

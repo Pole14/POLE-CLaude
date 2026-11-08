@@ -80,3 +80,50 @@ def box(lines, size, EMO):
                 e = EMO[v].resize((size, size), Image.LANCZOS)
                 im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))
     return im
+
+
+# ---- Estilo "tt" (8 nov 2026, orden de Pol): TikTok Sans Bold estática, blanco #FFFFFF,
+# contorno negro sólido #000000 de 3-5 px a 1080x1920 (nunca sombra), centrado, máx. 2 líneas.
+# Resaltado contenido: palabras entre *asteriscos* en amarillo TikTok.
+TT_FONT = D + 'fonts/TikTokSans36pt-Bold.ttf'
+HL = (255, 214, 0, 255)
+_TF = {}
+
+
+def tt_font(size):
+    if size not in _TF: _TF[size] = ImageFont.truetype(TT_FONT, size)
+    return _TF[size]
+
+
+def _tt_items(line, f, size):
+    items = []; x = 0.0
+    for k, v in parse(line):
+        if k == 'e':
+            items.append(('e', v, x + size * 0.04, None)); x += size * 1.08; continue
+        for j, seg in enumerate(re.split(r'\*', v)):
+            if not seg: continue
+            col = HL if j % 2 else (255, 255, 255, 255)
+            items.append(('t', seg, x, col)); x += f.getlength(seg)
+    return items, x
+
+
+def tt(lines, size, EMO, maxw=960, stroke=None):
+    lines = lines[:2]
+    while size > 30:
+        f = tt_font(size)
+        if max(_tt_items(l, f, size)[1] for l in lines) <= maxw: break
+        size -= 2
+    f = tt_font(size); st = stroke or (5 if size >= 96 else 4 if size >= 48 else 3)
+    asc, desc = f.getmetrics(); lh = int(size * 1.14)
+    rows = [_tt_items(l, f, size) for l in lines]
+    W = int(max(w for _, w in rows) + 2 * st + 16); H = int(lh * (len(rows) - 1) + asc + desc + 2 * st + 16)
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for i, (items, w) in enumerate(rows):
+        bx = (W - w) / 2; by = 8 + st + i * lh
+        for k, v, ox, col in items:
+            if k == 't':
+                d.text((bx + ox, by), v, font=f, fill=col, stroke_width=st, stroke_fill=(0, 0, 0, 255))
+            else:
+                e = EMO[v].resize((size, size), Image.LANCZOS)
+                im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))
+    return im
