@@ -32,6 +32,9 @@ Para cada día de los próximos 3 que tenga menos publicaciones de las que marca
 ## 2b. Estrategia
 Lee `ESTRATEGIA.md` del repo (algoritmo + plan por cuenta, 9 nov 2026) y síguelo: descripción corta (frase de búsqueda + código + beneficio + 3-4 hashtags, sin #happ), gancho con número grande verdadero, vídeo único por cuenta, cuentas separadas ≥20-30 min.
 
+
+GRABACIONES 120 (9 nov 21:15): hay 2. (1) ES: scratchpad k120/rec.mp4 (Gua 82, La Rioja, 39,17€→3,70€, envío 3,70 → nunca "envío gratis"). (2) FR: grabada en el móvil francés ("actif"), dirección Maisons-Alfort, 70,48€→0,00€ con envío 0,00 (aquí SÍ "livraison gratuite"), teléfono difuminado; vídeos videos/120hacoo_fr_*.mp4. La FR solo para cuentas francesas (@desc.pole); la ES solo para las españolas. @desc.pole: 1/día por la mañana (08:30-10:00), programado 10-12 nov.
+
 ## 3. Elegir formato
 Lee el doc del proyecto `claude/log-metricas.md` (herramienta Projects).
 - Si una revisión dice claramente que gana el formato A (gancho pequeño de 2 líneas) o el B (gancho grande de 3 líneas en el centro), usa ese en el 75 % de los huecos y el otro en el 25 %, para seguir comparando.
