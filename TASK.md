@@ -1,5 +1,15 @@
 # Tarea automática: fábrica de vídeos Hacoo (POLE14)
 
+## >>> ORDEN VIGENTE (9 nov 2026, 22:20) — MANDA SOBRE TODO LO DE ABAJO <<<
+- FULL CUPÓN 120 en TODAS las cuentas. NO hagas ni programes vídeos de POLE14 (no uses factory.py para crear posts).
+- Cuentas activas, 1 vídeo/día cada una, en hora pico, vídeo inédito y distinto en cada cuenta:
+  - ES (grabación española, "hasta 120 €", sin "envío gratis"): @codigos_hacoo_ 7992090 (LA CHETADA, mucho cuidado), @90hacoo14 7802274, @hacoocupones 7801775, @hacoorabatt 7905293. Hora ~17:30-19:10, separadas ≥20 min.
+  - FR (grabación francesa, "livraison gratuite" ok): @reductionsxhacoo 7841739, @code.promo.hacoo 7801996, @desc.pole 7968754. Hora 08:20-10:10, separadas ≥20 min.
+  - @chinahero01 7690746: NADA hasta que Pol diga.
+- Si faltan vídeos del 120 para cubrir los próximos días, NO rellenes con otra cosa: avisa a Pol (SendUserMessage) con qué cuentas/días faltan.
+- Música a -28 LUFS (mux3 por defecto). Descripciones cortas: frase de búsqueda + código + beneficio + CTA + 3-4 hashtags, sin #happ, en el idioma de la cuenta.
+- No borres nada: lo que sobre, a borrador.
+
 Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool para los próximos 3 días, con vídeos nuevos que no repitan ninguno anterior.
 
 ## 1. Preparar
