@@ -69,6 +69,63 @@ def circle_layer(box, prog, seed, width=9, col=(226, 32, 38, 255)):
     return L.resize((W, H), Image.LANCZOS)
 
 
+TOKRE = __import__('re').compile(r'\|emo:\w+\||\*')
+
+
+def tokens(line):
+    out = []; i = 0
+    for m in TOKRE.finditer(line):
+        out += list(line[i:m.start()]); out.append(m.group(0)); i = m.end()
+    return out + list(line[i:])
+
+
+def partial(lines, n):
+    res = []
+    for ln in lines:
+        if n <= 0: break
+        tk = tokens(ln); res.append(''.join(tk[:n])); n -= len(tk)
+    return res
+
+
+def arrow_layer(a, b, prog, seed, width=10, col=(226, 32, 38, 255)):
+    """Flecha roja a mano de a (cola) a b (punta), dibujada hasta prog."""
+    S = 2; rng = np.random.RandomState(seed)
+    (x0, y0), (x1, y1) = a, b
+    p = ease(prog); n = 30
+    bend = rng.uniform(-0.12, 0.12)
+    dx, dy = x1 - x0, y1 - y0
+    pts = []
+    for i in range(int(n * p) + 1):
+        u = i / n
+        off = math.sin(u * math.pi) * bend
+        pts.append(((x0 + dx * u - dy * off) * S, (y0 + dy * u + dx * off) * S))
+    L = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    if len(pts) > 1:
+        d.line(pts, fill=col, width=width * S, joint='curve')
+    if p >= 0.98:
+        ang = math.atan2(dy, dx); hl = 46
+        for s_ in (+1, -1):
+            a2 = ang + math.pi + s_ * 0.5
+            d.line([(x1 * S, y1 * S), ((x1 + hl * math.cos(a2)) * S, (y1 + hl * math.sin(a2)) * S)], fill=col, width=width * S)
+        r = width * S / 2
+        d.ellipse((x1 * S - r, y1 * S - r, x1 * S + r, y1 * S + r), fill=col)
+    return L.resize((W, H), Image.LANCZOS)
+
+
+_LB = {}
+
+
+def label_layer(text, size, col=(226, 32, 38, 255), rot=-10):
+    k = (text, size, rot)
+    if k not in _LB:
+        from PIL import ImageFont
+        f = ImageFont.truetype(ROOT + 'fonts/Caveat-Bold.ttf', size)
+        w = int(f.getlength(text)) + 40; h = int(size * 1.5)
+        im = Image.new('RGBA', (w, h), (0, 0, 0, 0)); ImageDraw.Draw(im).text((20, 0), text, font=f, fill=col)
+        _LB[k] = im.rotate(-rot * -1, resample=Image.BICUBIC, expand=True)
+    return _LB[k]
+
+
 SEO = None
 if fx.get('seo'):
     SEO = tkfont.tt([fx['seo']], fx.get('seo_size', 26), EMO, maxw=1040, stroke=2)
@@ -100,8 +157,26 @@ for i in range(n):
     for j, c in enumerate(CIRC):
         if c['t0'] <= t < c['t1']:
             fr.alpha_composite(circle_layer(c['box'], (t - c['t0']) / c.get('draw', 0.35), 7 + j, c.get('w', 9)))
+    for j, a in enumerate(fx.get('arrows', [])):
+        if a['t0'] <= t < a['t1']:
+            fr.alpha_composite(arrow_layer(a['a'], a['b'], (t - a['t0']) / a.get('draw', 0.25), 31 + j, a.get('w', 10)))
+    for lb in fx.get('labels', []):
+        if lb['t0'] <= t < lb['t1']:
+            im = label_layer(lb['text'], lb.get('size', 72), rot=lb.get('rot', -10))
+            fr.alpha_composite(im, (int(lb['x']), int(lb['y'])))
     for tx in fx.get('texts', []):
         if not (tx['t0'] <= t < tx['t1']): continue
+        lines = tx['lines']
+        if tx.get('tw'):
+            ntot = sum(len(tokens(l)) for l in lines)
+            k = int(ntot * min(1.0, (t - tx['t0']) / tx['tw']))
+            if k < ntot:
+                lines = partial(lines, max(1, k)); lines[-1] += '_'
+                lines = [l + '*' if l.count('*') % 2 else l for l in lines]
+            # anclado arriba para que no salte al crecer
+            im = block(lines, tx['size']); full = block(tx['lines'], tx['size'])
+            fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(tx['y'] - full.height / 2)))
+            continue
         im = block(tx['lines'], tx['size'])
         # 'y' = centro vertical del bloque
         fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(tx['y'] - im.height / 2)))
