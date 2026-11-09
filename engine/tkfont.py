@@ -107,8 +107,8 @@ def _tt_items(line, f, size):
     return items, x
 
 
-def tt(lines, size, EMO, maxw=960, stroke=None):
-    lines = lines[:2]
+def tt(lines, size, EMO, maxw=960, stroke=None, maxl=2):
+    lines = lines[:maxl]
     while size > 30:
         f = tt_font(size)
         if max(_tt_items(l, f, size)[1] for l in lines) <= maxw: break
