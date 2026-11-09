@@ -211,8 +211,17 @@ for i in range(n):
             u = x / 0.45; r = 18 + 52 * ease(u); a = int(200 * (1 - u))
             L = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
             d.ellipse((tp['x'] - r, tp['y'] - r, tp['x'] + r, tp['y'] + r), fill=(255, 255, 255, a // 2), outline=(90, 90, 90, a), width=4)
-            if u < 0.5: d.ellipse((tp['x'] - 16, tp['y'] - 16, tp['x'] + 16, tp['y'] + 16), fill=(255, 255, 255, 230), outline=(60, 60, 60, 230), width=3)
+            if u < 0.5 and not tp.get('hand', True): d.ellipse((tp['x'] - 16, tp['y'] - 16, tp['x'] + 16, tp['y'] + 16), fill=(255, 255, 255, 230), outline=(60, 60, 60, 230), width=3)
             fr.alpha_composite(L)
+        if tp.get('hand', True) and -0.35 <= x < 0.7:
+            # manita (Material Symbols touch_app, Apache 2.0): entra, pulsa y se va
+            if 'hand' not in EMO: EMO['hand'] = Image.open(ROOT + 'engine/emo/tap_hand.png').convert('RGBA')
+            v = (x + 0.35) / 1.05; sc = 0.92 if 0 <= x < 0.12 else 1.0
+            al = min(1.0, (x + 0.35) / 0.15, (0.7 - x) / 0.15)
+            hs = int(150 * sc); hi = EMO['hand'].resize((hs, hs), Image.LANCZOS)
+            hi.putalpha(hi.getchannel('A').point(lambda q: int(q * max(0.0, al))))
+            dx = int(40 * (1 - ease(min(1.0, (x + 0.35) / 0.3)))); 
+            fr.alpha_composite(hi, (int(tp['x'] - hs * 0.33 + dx), int(tp['y'] - hs * 0.12 + dx)))
     # zoom (empuje lento) + golpes de zoom; afecta al vídeo y marcas, no a los textos
     z = 1.0; zc = (W / 2, H / 2)
     for zm in fx.get('zooms', []):
