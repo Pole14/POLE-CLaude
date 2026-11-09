@@ -135,6 +135,20 @@ def arrow_layer(a, b, prog, seed, width=10, col=(226, 32, 38, 255)):
     return L.resize((W, H), Image.LANCZOS)
 
 
+def rect_layer(box, prog, width=10, col=(232, 20, 32, 255)):
+    """Rectángulo rojo simple que se dibuja solo (preferencia de Pol para la tarjeta del cupón)."""
+    S = 2; x0, y0, x1, y1 = box; p = ease(prog)
+    pts = [(x0, y0), (x1, y0), (x1, y1), (x0, y1), (x0, y0)]
+    L = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    tot = 4 * p; path = [pts[0]]
+    for k in range(4):
+        f = min(1.0, max(0.0, tot - k))
+        if f <= 0: break
+        a, b = pts[k], pts[k + 1]; path.append((a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f))
+    if len(path) > 1: d.line([(x * S, y * S) for x, y in path], fill=col, width=width * S, joint='curve')
+    return L.resize((W, H), Image.LANCZOS)
+
+
 _LB = {}
 
 
@@ -184,10 +198,34 @@ for i in range(n):
         if a['t0'] <= t < a['t1']:
             pr = (t - a['t0']) / a.get('draw', 0.25)
             fr.alpha_composite(arrow_solid(a['a'], a['b'], pr, a.get('w', 15)) if a.get('solid') else arrow_layer(a['a'], a['b'], pr, 31 + j, a.get('w', 10)))
+    for j, r in enumerate(fx.get('rects', [])):
+        if r['t0'] <= t < r['t1']:
+            fr.alpha_composite(rect_layer(r['box'], (t - r['t0']) / r.get('draw', 0.3), r.get('w', 10)))
     for lb in fx.get('labels', []):
         if lb['t0'] <= t < lb['t1']:
             im = label_layer(lb['text'], lb.get('size', 72), rot=lb.get('rot', -10))
             fr.alpha_composite(im, (int(lb['x']), int(lb['y'])))
+    for tp in fx.get('taps', []):
+        x = t - tp['t']
+        if 0 <= x < 0.45:
+            u = x / 0.45; r = 18 + 52 * ease(u); a = int(200 * (1 - u))
+            L = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+            d.ellipse((tp['x'] - r, tp['y'] - r, tp['x'] + r, tp['y'] + r), fill=(255, 255, 255, a // 2), outline=(90, 90, 90, a), width=4)
+            if u < 0.5: d.ellipse((tp['x'] - 16, tp['y'] - 16, tp['x'] + 16, tp['y'] + 16), fill=(255, 255, 255, 230), outline=(60, 60, 60, 230), width=3)
+            fr.alpha_composite(L)
+    # zoom (empuje lento) + golpes de zoom; afecta al vídeo y marcas, no a los textos
+    z = 1.0; zc = (W / 2, H / 2)
+    for zm in fx.get('zooms', []):
+        if zm['t0'] <= t < zm['t1']:
+            u = (t - zm['t0']) / (zm['t1'] - zm['t0']); u = u * u * (3 - 2 * u)
+            z = zm['z0'] + (zm['z1'] - zm['z0']) * u; zc = tuple(zm['c'])
+    for hp in fx.get('punches', []):
+        x = t - hp
+        if 0 <= x < 0.3: z *= 1 + 0.07 * (1 - x / 0.3) ** 2
+    if z > 1.0005:
+        a = np.array(fr.convert('RGB'))
+        M = np.float32([[z, 0, zc[0] - z * zc[0]], [0, z, zc[1] - z * zc[1]]])
+        fr = Image.fromarray(cv2.warpAffine(a, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)).convert('RGBA')
     for tx in fx.get('texts', []):
         if not (tx['t0'] <= t < tx['t1']): continue
         lines = tx['lines']
@@ -202,6 +240,10 @@ for i in range(n):
             fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(tx['y'] - full.height / 2)))
             continue
         im = block(tx['lines'], tx['size'], tx)
+        u = (t - tx['t0']) / 0.22
+        if fx.get('pop') and u < 1:
+            sc = 0.72 + 0.28 * ease(u) + 0.09 * math.sin(math.pi * u)
+            im = im.resize((max(1, int(im.width * sc)), max(1, int(im.height * sc))), Image.LANCZOS)
         # 'y' = centro vertical del bloque
         fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(tx['y'] - im.height / 2)))
     enc.stdin.write(fr.convert('RGB').tobytes())
