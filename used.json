@@ -40,7 +40,10 @@
   "C|cp_es_h5|A",
   "D|cp_es_h7|B",
   "Y1|cp_es_h9|A",
-  "B|cp_es_h2|B"
+  "B|cp_es_h2|B",
+  "C02|cp_fr_t8|A",
+  "A|cp_fr_t9|B",
+  "X4|cp_fr_t11|A"
  ],
  "log": [
   {
@@ -152,6 +155,42 @@
    "caption": "código hacoo black friday 2026 🔥 POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
    "tot": 10.81,
    "made": "2026-11-07T23:04:21"
+  },
+  {
+   "file": "out/2026-11-11_fr_A_C02_cp_fr_t8.mp4",
+   "lang": "fr",
+   "fmt": "A",
+   "base": "C02",
+   "hook": "cp_fr_t8",
+   "song": "lolita",
+   "caption": "-14% sur hacoo en 10 secondes 🔥 POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "code": "pole14",
+   "tot": 10.6,
+   "made": "2026-11-09T01:17:38"
+  },
+  {
+   "file": "out/2026-11-11_fr_B_A_cp_fr_t9.mp4",
+   "lang": "fr",
+   "fmt": "B",
+   "base": "A",
+   "hook": "cp_fr_t9",
+   "song": "parisienne",
+   "caption": "le code secret de hacoo 🤫 POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "code": "pole14",
+   "tot": 10.8,
+   "made": "2026-11-09T01:18:04"
+  },
+  {
+   "file": "out/2026-11-12_fr_A_X4_cp_fr_t11.mp4",
+   "lang": "fr",
+   "fmt": "A",
+   "base": "X4",
+   "hook": "cp_fr_t11",
+   "song": "free",
+   "caption": "tu commandes sur hacoo ? il te faut ça 👀 POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "code": "pole14",
+   "tot": 10.8,
+   "made": "2026-11-09T01:18:26"
   }
  ]
 }
