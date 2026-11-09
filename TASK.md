@@ -22,6 +22,8 @@ Cualquier cuenta nueva que Pol conecte para el cupón de 120 € (8 nov: una esp
 
 ORDEN DE POL (8 nov 2026, 22:35): las cuentas francesas (@reductionsxhacoo y @code.promo.hacoo) siguen normal, 2/día. En las demás publica Pol: no programes nada y no saques sus borradores. Cuando el cupón de 120 € exista de verdad (Pol pasa la grabación con el cupón aplicado y sus condiciones, y queda apuntado en `claude/receta-viral.md`), TODAS las cuentas pasan a vídeos del cupón de 120 €, 2/día. Hasta entonces, nunca hagas vídeos de cupones de 100/120/200 €.
 
+9 NOV 2026 (11:36): ya existe el cupón 120HACOO (grabación de Pol, specs en videos/2026-11-09_c120_*). Los vídeos de 120 € los monta Claude a mano en la sesión con Pol (no esta fábrica): tapando cashback, saldo y total, y diciendo siempre "productos seleccionados". Pol pidió meterlos en todas las cuentas. Esta fábrica sigue igual: solo POLE14 en las 2 cuentas FR.
+
 Si `getBrandSettings` muestra una marca nueva, no programes nada en ella hasta que Pol diga para qué es. Regla de Pol (8 nov 2026): ninguna cuenta publica solo 1 vídeo al día; mínimo 2/día, con horas distintas y vídeos siempre distintos.
 Revisión del finde (8 nov 2026): gana el gancho -90 % (bienvenida) y "code promo + mes" publicados por la mañana (6-9 h): 923, 818 y 1.346 visitas. Por la tarde-noche rinden menos en FR (344-787). Carrusel EN (239) y haul (344) flojos. En cada cuenta, 1 de los 2 vídeos diarios va entre 6 y 9 h y, cuando haya grabación de -90 %, prioriza ese gancho.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
