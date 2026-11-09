@@ -29,6 +29,9 @@ Si `getBrandSettings` muestra una marca nueva, no programes nada en ella hasta q
 Revisión del finde (8 nov 2026): gana el gancho -90 % (bienvenida) y "code promo + mes" publicados por la mañana (6-9 h): 923, 818 y 1.346 visitas. Por la tarde-noche rinden menos en FR (344-787). Carrusel EN (239) y haul (344) flojos. En FR el vídeo diario va entre 7:30 y 10 h y, cuando haya grabación de -90 %, prioriza ese gancho.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
 
+## 2b. Estrategia
+Lee `ESTRATEGIA.md` del repo (algoritmo + plan por cuenta, 9 nov 2026) y síguelo: descripción corta (frase de búsqueda + código + beneficio + 3-4 hashtags, sin #happ), gancho con número grande verdadero, vídeo único por cuenta, cuentas separadas ≥20-30 min.
+
 ## 3. Elegir formato
 Lee el doc del proyecto `claude/log-metricas.md` (herramienta Projects).
 - Si una revisión dice claramente que gana el formato A (gancho pequeño de 2 líneas) o el B (gancho grande de 3 líneas en el centro), usa ese en el 75 % de los huecos y el otro en el 25 %, para seguir comparando.
