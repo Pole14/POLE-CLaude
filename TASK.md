@@ -11,8 +11,8 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 
 | Cuenta | blogId | Idioma(s) | Ritmo |
 |---|---|---|---|
-| @reductionsxhacoo | 7841739 | fr | 2/día (la más fuerte) |
-| @code.promo.hacoo | 7801996 | fr | 2/día |
+| @reductionsxhacoo | 7841739 | fr | 1/día (la más fuerte) |
+| @code.promo.hacoo | 7801996 | fr | 1/día |
 | @hacoorabatt | 7905293 | es + en | NO TOCAR: publica Pol |
 | @chinahero01 | 7690746 | es (en días alternos en) | NO TOCAR: publica Pol |
 | @hacoocupones | 7801775 | es | NO TOCAR: publica Pol |
@@ -20,13 +20,13 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 
 Cualquier cuenta nueva que Pol conecte para el cupón de 120 € (8 nov: una española, @90hacoo14, y una francesa nueva): NO TOCAR, solo cupón de 120 € y la lleva Pol.
 
-ORDEN DE POL (8 nov 2026, 22:35): las cuentas francesas (@reductionsxhacoo y @code.promo.hacoo) siguen normal, 2/día. En las demás publica Pol: no programes nada y no saques sus borradores. Cuando el cupón de 120 € exista de verdad (Pol pasa la grabación con el cupón aplicado y sus condiciones, y queda apuntado en `claude/receta-viral.md`), TODAS las cuentas pasan a vídeos del cupón de 120 €, 2/día. Hasta entonces, nunca hagas vídeos de cupones de 100/120/200 €.
+ORDEN DE POL (8 nov 2026, 22:35): las cuentas francesas (@reductionsxhacoo y @code.promo.hacoo) siguen normal (ahora 1/día, ver regla del 9 nov). En las demás publica Pol: no programes nada y no saques sus borradores. Cuando el cupón de 120 € exista de verdad (Pol pasa la grabación con el cupón aplicado y sus condiciones, y queda apuntado en `claude/receta-viral.md`), TODAS las cuentas pasan a vídeos del cupón de 120 €, 2/día. Hasta entonces, nunca hagas vídeos de cupones de 100/120/200 €.
 
 9 NOV 2026 (16:35) ACTUALIZACIÓN: Hacoo (EricPoa) confirmó por WhatsApp el cupón 120HACOO (120 € de descuento). Pol da permiso para usar TODAS las cuentas. Vídeos de 120 válidos: solo los hechos con la grabación v3 CON EL TELÉFONO DIFUMINADO (Pol, 9 nov 19:36: "difumina mi número"; usa siempre los videos/120hacoo_*_v2.mp4, nunca los sin _v2). Pol 9 nov 20:16: solo vídeos de la tanda NUEVA (épicos con manita, zooms y rectángulos: d,e,f,g,w1,w2,x,y,z); nada de la tanda antigua (a_1a1, b_liam, c_charlie). Vídeo distinto en cada cuenta. @hacoorabatt vuelve a tener permiso. Nueva cuenta FR del 120: @desc.pole (7968754), conectada 9 nov. Pol 9 nov 20:32: @chinahero01 NO subir nada (sus posts del 120 en borrador). @90hacoo14 el 9 nov nada más. (videos/120hacoo_*.mp4, voz Liam/Charlie). En el texto: "hasta 120 €", nunca "envío gratis" (la grabación muestra 3,70 € de envío). Programados el 9 y 10 nov en @90hacoo14, @chinahero01 y @hacoocupones. @hacoorabatt: NO SUBIR NADA (Pol, 9 nov 16:42); sus 3 posts del 120 quedaron en borrador. La "Cuenta FRANCES 120" (7968754) aún no tiene TikTok conectado en Metricool. Las cuentas francesas siguen con POLE14 hasta que haya vídeos de 120 en francés.
 (Nota antigua, ya superada) 9 NOV 2026 (12:55) CORRECCIÓN: la grabación "120HACOO" NO sirve. Es la misma pantalla que el vídeo de -200 € con 18BOSS (misma hora 11:39, misma dirección, mismos productos, mismo total 18,92 €) con solo la cifra cambiada, y las cuentas no cuadran (228,69 − 120 − 76,78 − 122,99 ≠ 18,92). No hagas ni programes vídeos de 120 €. Los 4 posts de 120 del 9 nov quedan en borrador. Sigue solo con POLE14.
 
-Si `getBrandSettings` muestra una marca nueva, no programes nada en ella hasta que Pol diga para qué es. Regla de Pol (9 nov 2026, sustituye a la del 8 nov) para las cuentas españolas del 120 (@90hacoo14, @chinahero01, @hacoocupones): ritmo alterno 2-1-2-1 (un día 2 vídeos, el siguiente 1, y así siempre). 9 nov = 2, 10 nov = 1, 11 nov = 2, 12 nov = 1... Antes de programar un día, mira si Pol ya ha subido algo ese día (analytics TKPO02) y cuéntalo. Horas aleatorias (minutos no redondos) pero dentro de los picos de Metricool: 10 h, 12 h, 16-18 h (el mejor 18 h). Vídeos siempre distintos dentro de una cuenta. Separación mínima de 3-4 h entre los 2 vídeos del mismo día en una cuenta (Pol: "no subas tan seguido"), y escalona las cuentas para que no salgan todas a la vez.
-Revisión del finde (8 nov 2026): gana el gancho -90 % (bienvenida) y "code promo + mes" publicados por la mañana (6-9 h): 923, 818 y 1.346 visitas. Por la tarde-noche rinden menos en FR (344-787). Carrusel EN (239) y haul (344) flojos. En cada cuenta, 1 de los 2 vídeos diarios va entre 6 y 9 h y, cuando haya grabación de -90 %, prioriza ese gancho.
+Si `getBrandSettings` muestra una marca nueva, no programes nada en ella hasta que Pol diga para qué es. REGLA DE POL (9 nov 2026, 20:34, sustituye a TODAS las anteriores de ritmo): 1 vídeo BUENÍSIMO al día por cuenta y listo, en hora pico (ES: 17:30-19:00, el pico de Metricool es 18 h; FR: 07:30-10:00, que es lo que mejor les va). Nunca 2 al día en una cuenta (Pol: "si no, las vamos a shadowbanear"; la cuenta que más visitas pilló llevaba 3 días sin publicar). Solo vídeos de calidad épica (manita, zooms, rectángulos, voz seguida), vídeo distinto en cada cuenta y escalona las cuentas. Antes de programar un día, mira si Pol ya ha subido algo ese día (analytics TKPO02): si sí, ese día nada.
+Revisión del finde (8 nov 2026): gana el gancho -90 % (bienvenida) y "code promo + mes" publicados por la mañana (6-9 h): 923, 818 y 1.346 visitas. Por la tarde-noche rinden menos en FR (344-787). Carrusel EN (239) y haul (344) flojos. En FR el vídeo diario va entre 7:30 y 10 h y, cuando haya grabación de -90 %, prioriza ese gancho.
 Para cada día de los próximos 3 que tenga menos publicaciones de las que marca el ritmo, apunta un hueco.
 
 ## 3. Elegir formato
@@ -48,10 +48,10 @@ Para cada hueco: `python3 factory.py --lang <fr|es|en> --fmt <A|B> --n 1 --date 
    - `tiktokData` = `{"privacyOption":"PUBLIC_TO_EVERYONE","commercialContentThirdParty":true,"title":...,"photoCoverIndex":0}`.
    - `autoPublish` true y `draft` false.
 3. Horas: elige minutos que no sean redondos y no repitas hora exacta en la misma cuenta.
-   - FR: una entre 08:00 y 11:00 y otra entre 18:00 y 21:00.
+   - FR: 1 al día entre 07:30 y 10:00.
    - ES/EN: entre 13:00 y 15:00 o entre 18:00 y 21:00.
    - La gente compra sobre todo de 20 a 23 h, así que el vídeo de la tarde, antes de las 20 h.
-   - Máximo 2 por día por cuenta, contando las que ya había.
+   - Máximo 1 por día por cuenta, contando las que ya había.
 4. En el mismo commit sube used.json y out/*.meta.json. Los mp4 de out/ no se suben (están en .gitignore); solo los de videos/.
 
 ## 6. Avisar
