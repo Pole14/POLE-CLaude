@@ -62,7 +62,7 @@ def outline(lines, size, EMO, sd=13):
     return im
 
 
-def box(lines, size, EMO):
+def box(lines, size, EMO, bg=(255, 255, 255, 255), fg=(18, 18, 18, 255)):
     f = font(size); asc, desc = f.getmetrics()
     padx = int(size * 0.30); lh = int(size * 1.22); r = int(size * 0.26)
     rows = [_layout(l, f, size) for l in lines]
@@ -70,12 +70,12 @@ def box(lines, size, EMO):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     for i, (items, w) in enumerate(rows):
         x0 = (W - w) / 2 - padx; y0 = 10 + i * lh
-        d.rounded_rectangle((x0, y0, x0 + w + 2 * padx, y0 + lh), r, fill=(255, 255, 255, 255))
+        d.rounded_rectangle((x0, y0, x0 + w + 2 * padx, y0 + lh), r, fill=bg)
     for i, (items, w) in enumerate(rows):
         bx = (W - w) / 2; by = 10 + i * lh + (lh - (asc + desc)) / 2 + size * 0.02
         for k, v, ox in items:
             if k == 't':
-                d.text((bx + ox, by), v, font=f, fill=(18, 18, 18, 255))
+                d.text((bx + ox, by), v, font=f, fill=fg)
             else:
                 e = EMO[v].resize((size, size), Image.LANCZOS)
                 im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))
@@ -149,4 +149,33 @@ def classic(lines, size, EMO, wght=600, stroke=4, lh=1.06, maxw=1000, maxl=3):
             else:
                 e = EMO[v].resize((int(size * 1.0), int(size * 1.0)), Image.LANCZOS)
                 im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))
+    return im
+
+
+# ---- Estilo "stack" (9 nov 2026): título apilado, cada línea con su tamaño (p. ej. HACOO grande / CUPÓN 120€ / (noviembre ✅) pequeño).
+# Fuente a elegir (TikTok Sans Bold u Oswald Bold), blanco con contorno negro sólido.
+def stack(lines, sizes, EMO, fontfile='TikTokSans36pt-Bold.ttf', maxw=980, gap=0.02):
+    rows = []
+    for l, s in zip(lines, sizes):
+        while s > 30:
+            f = ImageFont.truetype(D + 'fonts/' + fontfile, s)
+            its, w = _tt_items(l, f, s)
+            if w <= maxw: break
+            s -= 2
+        rows.append((its, w, f, s))
+    st = lambda s: 6 if s >= 140 else 5 if s >= 96 else 4
+    H = 16; ys = []
+    for its, w, f, s in rows:
+        asc, desc = f.getmetrics(); ys.append(H); H += int(asc + desc * 0.35 + 2 * st(s) + s * gap)
+    H += 16
+    W = int(max(w for _, w, _, _ in rows) + 40)
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for (its, w, f, s), y in zip(rows, ys):
+        bx = (W - w) / 2; asc, _ = f.getmetrics()
+        for k, v, ox, col in its:
+            if k == 't':
+                d.text((bx + ox, y + st(s)), v, font=f, fill=col, stroke_width=st(s), stroke_fill=(0, 0, 0, 255))
+            else:
+                e = EMO[v].resize((s, s), Image.LANCZOS)
+                im.alpha_composite(e, (int(bx + ox), int(y + st(s) + asc - s * 0.86)))
     return im

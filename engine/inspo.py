@@ -36,11 +36,18 @@ _C = {}
 TSTYLE = fx.get('tstyle', 'tt')
 
 
-def block(lines, size):
-    k = (json.dumps(lines), size)
+def block(lines, size, tx=None):
+    tx = tx or {}
+    st = tx.get('style', TSTYLE)
+    k = (json.dumps(lines), size, st, json.dumps(tx.get('sizes')), tx.get('font'))
     if k not in _C:
         ls = [l if l.strip() else ' ' for l in lines]
-        _C[k] = tkfont.classic(ls, size, EMO) if TSTYLE == 'classic' else tkfont.tt(ls, size, EMO, maxl=3)
+        if st == 'classic': im = tkfont.classic(ls, size, EMO)
+        elif st == 'box': im = tkfont.box(ls, size, EMO)
+        elif st == 'darkbox': im = tkfont.box(ls, size, EMO, bg=(0, 0, 0, 205), fg=(255, 255, 255, 255))
+        elif st == 'stack': im = tkfont.stack(ls, tx['sizes'][:len(ls)], EMO, tx.get('font', 'TikTokSans36pt-Bold.ttf'))
+        else: im = tkfont.tt(ls, size, EMO, maxl=3)
+        _C[k] = im
     return _C[k]
 
 
@@ -191,10 +198,10 @@ for i in range(n):
                 lines = partial(lines, max(1, k)); lines[-1] += '_'
                 lines = [l + '*' if l.count('*') % 2 else l for l in lines]
             # anclado arriba para que no salte al crecer
-            im = block(lines, tx['size']); full = block(tx['lines'], tx['size'])
+            im = block(lines, tx['size'], tx); full = block(tx['lines'], tx['size'], tx)
             fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(tx['y'] - full.height / 2)))
             continue
-        im = block(tx['lines'], tx['size'])
+        im = block(tx['lines'], tx['size'], tx)
         # 'y' = centro vertical del bloque
         fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(tx['y'] - im.height / 2)))
     enc.stdin.write(fr.convert('RGB').tobytes())
