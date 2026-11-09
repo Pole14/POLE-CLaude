@@ -16,6 +16,7 @@ Objetivo: que todas las cuentas tengan siempre contenido programado en Metricool
 | @hacoorabatt | 7905293 | es + en | NO TOCAR: publica Pol |
 | @chinahero01 | 7690746 | es (en días alternos en) | NO TOCAR: publica Pol |
 | @hacoocupones | 7801775 | es | NO TOCAR: publica Pol |
+| @codigos_hacoo_ | 7992090 | es | 1/día. LA CHETADA (cuenta top de Pol, solo 120). MUCHO CUIDADO: solo vídeos inéditos y buenísimos, nunca 2 al día, no tocar sus posts/borradores |
 | @90hacoo14 | 7802274 | es | NO TOCAR NUNCA: cuenta nueva con mucho potencial (1.800 visitas en su 1er vídeo), la lleva Pol, solo cupón de 120 € |
 
 Cualquier cuenta nueva que Pol conecte para el cupón de 120 € (8 nov: una española, @90hacoo14, y una francesa nueva): NO TOCAR, solo cupón de 120 € y la lleva Pol.
