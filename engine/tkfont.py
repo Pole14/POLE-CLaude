@@ -127,3 +127,26 @@ def tt(lines, size, EMO, maxw=960, stroke=None, maxl=2):
                 e = EMO[v].resize((size, size), Image.LANCZOS)
                 im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))
     return im
+
+
+# ---- Estilo "classic" (9 nov 2026): copia 1:1 del texto de TikTok del vídeo PREM100 de la competencia.
+# TikTok Sans variable, peso medio (~600), blanco, contorno negro fino (~4 px a 1080), interlineado apretado.
+def classic(lines, size, EMO, wght=600, stroke=4, lh=1.06, maxw=1000, maxl=3):
+    lines = lines[:maxl]
+    while size > 30:
+        f = font(size, wght)
+        if max(_layout(l, f, size)[1] for l in lines) <= maxw: break
+        size -= 2
+    f = font(size, wght); asc, desc = f.getmetrics(); L = int(size * lh)
+    rows = [_layout(l, f, size) for l in lines]
+    W = int(max(w for _, w in rows) + 2 * stroke + 16); H = int(L * (len(rows) - 1) + asc + desc + 2 * stroke + 16)
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for i, (items, w) in enumerate(rows):
+        bx = (W - w) / 2; by = 8 + stroke + i * L
+        for k, v, ox in items:
+            if k == 't':
+                d.text((bx + ox, by), v, font=f, fill='white', stroke_width=stroke, stroke_fill='black')
+            else:
+                e = EMO[v].resize((int(size * 1.0), int(size * 1.0)), Image.LANCZOS)
+                im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))
+    return im

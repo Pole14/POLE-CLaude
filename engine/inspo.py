@@ -33,10 +33,14 @@ for n, f in {'money': 'b42', 'scream': 'b41', 'shush': 'b40', 'party': 'b51', 'w
 _C = {}
 
 
+TSTYLE = fx.get('tstyle', 'tt')
+
+
 def block(lines, size):
     k = (json.dumps(lines), size)
     if k not in _C:
-        _C[k] = tkfont.tt([l if l.strip() else ' ' for l in lines], size, EMO, maxl=3)
+        ls = [l if l.strip() else ' ' for l in lines]
+        _C[k] = tkfont.classic(ls, size, EMO) if TSTYLE == 'classic' else tkfont.tt(ls, size, EMO, maxl=3)
     return _C[k]
 
 
@@ -87,6 +91,18 @@ def partial(lines, n):
     return res
 
 
+def arrow_solid(a, b, prog, width=15, col=(236, 28, 28, 255)):
+    S = 2; (x0, y0), (x1, y1) = a, b; p = ease(prog)
+    xe, ye = x0 + (x1 - x0) * p, y0 + (y1 - y0) * p
+    ang = math.atan2(y1 - y0, x1 - x0); hl, hw = 44, 30
+    bx, by = xe - hl * math.cos(ang), ye - hl * math.sin(ang)
+    L = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    d.line([(x0 * S, y0 * S), (bx * S, by * S)], fill=col, width=width * S)
+    nx, ny = -math.sin(ang), math.cos(ang)
+    d.polygon([(xe * S, ye * S), ((bx + nx * hw) * S, (by + ny * hw) * S), ((bx - nx * hw) * S, (by - ny * hw) * S)], fill=col)
+    return L.resize((W, H), Image.LANCZOS)
+
+
 def arrow_layer(a, b, prog, seed, width=10, col=(226, 32, 38, 255)):
     """Flecha roja a mano de a (cola) a b (punta), dibujada hasta prog."""
     S = 2; rng = np.random.RandomState(seed)
@@ -115,7 +131,7 @@ def arrow_layer(a, b, prog, seed, width=10, col=(226, 32, 38, 255)):
 _LB = {}
 
 
-def label_layer(text, size, col=(226, 32, 38, 255), rot=-10):
+def label_layer(text, size, col=(232, 24, 24, 255), rot=-10):
     k = (text, size, rot)
     if k not in _LB:
         from PIL import ImageFont
@@ -159,7 +175,8 @@ for i in range(n):
             fr.alpha_composite(circle_layer(c['box'], (t - c['t0']) / c.get('draw', 0.35), 7 + j, c.get('w', 9)))
     for j, a in enumerate(fx.get('arrows', [])):
         if a['t0'] <= t < a['t1']:
-            fr.alpha_composite(arrow_layer(a['a'], a['b'], (t - a['t0']) / a.get('draw', 0.25), 31 + j, a.get('w', 10)))
+            pr = (t - a['t0']) / a.get('draw', 0.25)
+            fr.alpha_composite(arrow_solid(a['a'], a['b'], pr, a.get('w', 15)) if a.get('solid') else arrow_layer(a['a'], a['b'], pr, 31 + j, a.get('w', 10)))
     for lb in fx.get('labels', []):
         if lb['t0'] <= t < lb['t1']:
             im = label_layer(lb['text'], lb.get('size', 72), rot=lb.get('rot', -10))
