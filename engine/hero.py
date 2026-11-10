@@ -128,8 +128,12 @@ def line_img(text, size, font):
     k = (text, size, font)
     if k not in _C:
         mw = sp.get('maxw', 930); s_ = size
-        im = hline(text if text.strip() else ' ', s_, font)
-        while im.width > mw + 40 and s_ > 30: s_ -= 4; im = hline(text, s_, font)
+        if font == 'classic':
+            im = tkfont.classic([text if text.strip() else ' '], s_, EMO, maxw=mw)
+            pad = Image.new('RGBA', (im.width + 16, im.height + 24), (0, 0, 0, 0)); pad.alpha_composite(im, (8, 12)); im = pad
+        else:
+            im = hline(text if text.strip() else ' ', s_, font)
+            while im.width > mw + 40 and s_ > 30: s_ -= 4; im = hline(text, s_, font)
         _C[k] = deco(im)
     return _C[k]
 
@@ -154,6 +158,19 @@ def rect_layer(d, box, prog, width, S, col=(232, 20, 32, 255)):
         d.line([(x * S, y * S) for x, y in path], fill=col, width=int(width * S), joint='curve')
         r = width * S / 2
         for x, y in path: d.ellipse((x * S - r, y * S - r, x * S + r, y * S + r), fill=col)
+
+
+def circle_pts(box, prog, seed):
+    x0, y0, x1, y1 = box; cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    rx, ry = (x1 - x0) / 2 * 1.06, (y1 - y0) / 2 * 1.12
+    rng = np.random.RandomState(seed); ph1, ph2 = rng.uniform(0, 6.28, 2)
+    a0 = math.radians(-115 + rng.uniform(-15, 15)); sweep = math.radians(385) * ease(prog); n = max(2, int(140 * ease(prog)))
+    pts = []
+    for i in range(n + 1):
+        a = a0 + sweep * i / n
+        k = 1 + 0.035 * math.sin(2 * a + ph1) + 0.015 * math.sin(5 * a + ph2) + 0.05 * (i / 140)
+        pts.append((cx + rx * k * math.cos(a), cy + ry * k * math.sin(a)))
+    return pts
 
 
 _SPOT = {}
@@ -216,6 +233,14 @@ for i in range(n):
             x0, y0 = P(r['box'][0], r['box'][1]); x1, y1 = P(r['box'][2], r['box'][3])
             fo = min(1.0, (r['t1'] - t) / 0.15)
             rect_layer(dr, (x0, y0, x1, y1), (t - r['t0']) / r.get('draw', 0.3), r.get('w', 10) * (0.6 + 0.4 * z), S, (232, 20, 32, int(255 * fo)))
+    for j, c in enumerate(sp.get('circles', [])):
+        if c['t0'] <= t < c['t1']:
+            if Lr is None: Lr = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0)); dr = ImageDraw.Draw(Lr)
+            x0, y0 = P(c['box'][0], c['box'][1]); x1, y1 = P(c['box'][2], c['box'][3])
+            pts = [(x * S, y * S) for x, y in circle_pts((x0, y0, x1, y1), (t - c['t0']) / c.get('draw', 0.35), 11 + j)]
+            wd = int(c.get('w', 8) * (0.6 + 0.4 * z) * S); col = (226, 32, 38, int(255 * min(1.0, (c['t1'] - t) / 0.15)))
+            dr.line(pts, fill=col, width=wd, joint='curve')
+            for q in (pts[0], pts[-1]): dr.ellipse((q[0] - wd / 2, q[1] - wd / 2, q[0] + wd / 2, q[1] + wd / 2), fill=col)
     if Lr is not None: fr.alpha_composite(Lr.resize((W, H), Image.LANCZOS))
     for tp in sp.get('taps', []):
         x = t - tp['t']; px, py = P(tp['x'], tp['y'])
