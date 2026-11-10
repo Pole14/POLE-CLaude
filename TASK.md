@@ -1,5 +1,12 @@
 # Tarea automática: fábrica de vídeos Hacoo (POLE14)
 
+## >>> NOVEDAD 10 nov 2026 (10:45) — ESTILO QUE POL QUIERE AHORA <<<
+- Pol (10 nov): "por ahora son los mejores que has hecho" → estilo SENCILLO CON MOVIMIENTO: grabación seguida, letra clásica de TikTok en minúsculas, líneas que entran con la voz, círculo/rectángulo rojo en la casilla y el botón, manita, cámara suave, billetes al bajar el precio. Motor: `engine/hero.py` (spec json) + `engine/mux3.py`; constructor y ejemplos en `engine/specs/` (sb.py, mk7.py, mk8.py).
+- Idioma del fondo = idioma del vídeo (Pol 10 nov): francés → grabación con la app en francés (scratchpad r4/rec.mp4, Londres, £36.15→£0.00; saltar rec 10.10→10.26 y cortar el aviso "produits vendus" 8.67→9.62); español → grabación española; inglés → grabación inglesa (Alemania, 70,34 €→0,00 €), aún sin vídeos porque no hay voces.
+- NUNCA subir vídeos sin voz (Pol 10 nov). ElevenLabs sin saldo/401 desde el 10 nov: Pol conectará otra cuenta. Hasta entonces no hay voces nuevas: avisar a Pol, no rellenar.
+- Falta el SFX de dinero: Pol tiene que pasar su zip de SFX (no inventar sonidos).
+- Programado 11 nov con el estilo nuevo en las 8 cuentas (los épicos antiguos de ese día quedaron en borrador). 13 nov: solo @reductionsxhacoo (hero FR). Del 13 en adelante faltan vídeos en todas las demás.
+
 ## >>> ORDEN VIGENTE (9 nov 2026, 22:20) — MANDA SOBRE TODO LO DE ABAJO <<<
 - FULL CUPÓN 120 en TODAS las cuentas. NO hagas ni programes vídeos de POLE14 (no uses factory.py para crear posts).
 - Cuentas activas, 1 vídeo/día cada una, en hora pico, vídeo inédito y distinto en cada cuenta:
