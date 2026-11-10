@@ -1,3 +1,4 @@
+import re
 import json, subprocess, os
 V='/home/claude/pole-claude/voices/'
 WORDS=json.load(open('words.json'))
@@ -18,11 +19,22 @@ REC={
    FIELD=[20,478,660,578],CIRC=[18,468,470,590],BTN=(850,523),BTNC=[680,468,1034,580],TOT0=[24,905,1056,1005],TOT1=[24,940,1056,1040],CARD=[24,705,1056,1045],
    tapd=0.3,seo='code promo hacoo novembre 2026',
    hook={'check':lambda c1:[[0,2.95],[c1-0.3,3.55],[c1,3.85]],
+         'zoomout':lambda c1:[[0,2.95],[c1-0.3,3.55],[c1,3.85]],
          'card':lambda c1:[[0,10.62],[c1-0.4,11.85],[c1-0.39,2.95],[c1,3.85]],
          'drop':lambda c1:[[0,8.3],[0.34,8.62],[0.35,9.62],[c1-0.4,10.1],[c1-0.39,2.95],[c1,3.85]]},
    mid=lambda h,ap,rev,s100,end:[[h,3.9],[ap-0.3,6.05],[ap,6.6],[ap+0.01,8.25],[ap+0.5,8.6],[rev-0.02,8.62],[rev,9.62],[s100-0.65,10.10],[s100-0.64,10.26],[s100-0.2,10.55],[end,11.85]],
    replay=lambda q1,drop,cta:[[q1+0.01,8.05],[drop-0.02,8.62],[drop-0.01,9.62],[cta,10.0]],
    endt=lambda cta,tot:[[tot,10.1]], endc=lambda cta,tot:[[cta+0.01,10.7],[tot,11.85]], endt2=lambda cta,tot:[[cta+0.01,9.62],[tot,10.1]]),
+ 'en':dict(rec='../en/rec.mp4',fy=575,sf=430,ty0=1001,ty1=1001,cy=862,
+   FIELD=[20,528,740,620],CIRC=[20,520,480,628],BTN=(888,572),BTNC=[770,525,1010,620],TOT0=[24,955,1056,1045],TOT1=[24,955,1056,1045],CARD=[28,715,1052,1010],
+   tapd=0.33,seo='hacoo discount code november 2026',
+   hook={'check':lambda c1:[[0,4.05],[c1-0.3,4.6],[c1,4.85]],
+         'zoomout':lambda c1:[[0,4.05],[c1-0.3,4.6],[c1,4.85]],
+         'card':lambda c1:[[0,1.6],[c1-0.4,3.2],[c1-0.39,4.05],[c1,4.85]],
+         'drop':lambda c1:[[0,8.55],[0.34,8.9],[0.37,8.93],[0.42,8.96],[c1-0.4,10.7],[c1-0.39,4.05],[c1,4.85]]},
+   mid=lambda h,ap,rev,s100,end:[[h,5.35],[ap-0.3,7.55],[ap,8.3],[ap+0.25,8.6],[ap+0.6,8.9],[rev-0.03,8.92],[rev+0.02,8.96],[s100-0.65,10.75],[s100-0.2,11.2],[end,11.9]],
+   replay=lambda q1,drop,cta:[[q1+0.01,8.35],[drop-0.05,8.9],[drop-0.02,8.92],[drop+0.03,8.96],[cta,10.0]],
+   endt=lambda cta,tot:[[tot,10.7]], endc=lambda cta,tot:[[cta+0.01,1.6],[tot,3.2]], endt2=lambda cta,tot:[[cta+0.01,8.96],[tot,10.7]]),
 }
 def build(name,lang,voice,M,hookv,rows,font=None,mark='circle',end='total',emo=('moneyfly','moneyfly','moneyfly'),zf=1.22,sizes=(90,112),typ=2.3,res=1.6,song='gone'):
     R=REC[lang]; W=WORDS[voice]['w']; dur=WORDS[voice]['dur']
@@ -76,12 +88,22 @@ def build(name,lang,voice,M,hookv,rows,font=None,mark='circle',end='total',emo=(
         if end=='total': K(cta+0.01,1.05,(540,ty1),(540,760)); K(tot,1.1,(540,ty1),(540,760))
         else: K(tot,1.1,(540,cy),(540,740))
     ts=[k['t'] for k in cam]; assert all(ts[i+1]>ts[i] for i in range(len(ts)-1)),(name,ts)
-    strip=(lambda s:s.replace('*','')) if font=='classic' else (lambda s:s)
+    def strip(tx):
+        """Tipografía del primer vídeo de Fable (la que Pol dio por perfecta): TikTok Sans Bold en mayúsculas,
+        contorno negro y la cifra/código en amarillo."""
+        parts=re.split(r'(\|emo:\w+\|)',tx.replace('*',''))
+        out=[]
+        for p in parts:
+            if p.startswith('|emo:'): out.append(p); continue
+            p=p.upper()
+            p=re.sub(r'[\w%€£,.\-]*\d[\w%€£,\-]*',lambda m:'*'+m.group(0)+'*',p)
+            out.append(p)
+        return ''.join(out)
     S1,S2=sizes
     G=[]
     def grp(key,y,t1,gap=-0.1):
         rr=[{'at':tm(tv) if isinstance(tv,(int,float)) else tv[0],'text':strip(tx),'size':(S2 if big else S1)} for tv,tx,big in rows.get(key,[])]
-        if rr: G.append({'t1':round(t1,3),'y':y,'font':font,'gap':gap if font=='classic' else 0.0,'rows':rr})
+        if rr: G.append({'t1':round(t1,3),'y':y,'font':font,'gap':gap if font=='classic' else (0.02 if font in('box','darkbox') else 0.0),'rows':rr})
     hy={'cart':820,'check':1130,'card':1010,'drop':1100,'zoomout':1060}[hookv]
     hk=rows['hook']; 
     # el gancho puede tener 2 frases: se parte donde haya un hueco marcado con None
@@ -91,7 +113,15 @@ def build(name,lang,voice,M,hookv,rows,font=None,mark='circle',end='total',emo=(
         else: parts[-1].append(r)
     for i,pr in enumerate(parts):
         t1=tm(parts[i+1][0][0])-0.12 if i+1<len(parts) else c1
-        G.append({'t1':round(t1,3),'y':hy,'font':font,'gap':-0.1 if font=='classic' else 0.0,'rows':[{'at':max(0.12,tm(tv)),'text':strip(tx),'size':(S2 if big else S1)} for tv,tx,big in pr]})
+        rr=[]
+        for tv,tx,big in pr:
+            num=tx.strip().startswith('(') or (any(ch.isdigit() for ch in tx) and not any(t2.strip().startswith('(') for _,t2,_ in pr))
+            r={'text':strip(tx),'size':(S2 if big else S1)}
+            if num: r['at']=max(0.1,tm(tv)); r['fx']='blur'      # el número entra desenfocado
+            elif i==0: r['at']=-1                                  # la frase del gancho se ve desde el primer fotograma
+            else: r['at']=tm(tv)
+            rr.append(r)
+        G.append({'t1':round(t1,3),'y':hy,'font':font,'gap':-0.1 if font=='classic' else (0.02 if font in('box','darkbox') else 0.0),'rows':rr})
     grp('tap',980,rev-0.05); 
     G.append({'t1':round(s100-0.7,3),'y':1150,'font':font,'rows':[{'at':rev,'text':strip(rows['rev']),'size':S2}]})
     grp('c100',1000,(q1 if q1 else cta)-0.05)

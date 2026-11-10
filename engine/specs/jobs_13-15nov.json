@@ -1,0 +1,1736 @@
+[
+ {
+  "id": "S01",
+  "lang": "es",
+  "blog": "7905293",
+  "date": "2026-11-13",
+  "time": "17:38",
+  "voice": "Liam",
+  "script": "Cupón de Hacoo para noviembre: ciento veinte euros. Escribe el código de la pantalla en la casilla del cupón... dale a solicitar... y mira el total. Cien por cien de descuento, hasta ciento veinte euros. Mi pedido pasa de treinta y nueve euros... a tres con setenta. Guárdalo para tu próximo pedido.",
+  "anchors": {
+   "amt": [
+    "ciento",
+    "120"
+   ],
+   "h": [
+    "escribe"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "mira"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "mi"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "guárdalo",
+    "guardalo",
+    "guárdelo"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CUPÓN DE HACOO",
+    "PARA NOVIEMBRE",
+    "(120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "MIRA EL TOTAL |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "MI PEDIDO PASA DE 39€...",
+    "A 3,70€"
+   ],
+   "cta": [
+    "GUÁRDALO PARA",
+    "TU PRÓXIMO PEDIDO |emo:pin|"
+   ]
+  },
+  "hookv": "cart",
+  "mark": "circle",
+  "end": "total",
+  "song": "gone",
+  "caption": "cupón de hacoo para noviembre ✅ código 120HACOO: 100% de descuento hasta 120 €, de 39,17 € a 3,70 €. Guárdalo para tu próximo pedido #cuponhacoo #hacoo #codigohacoo",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S02",
+  "lang": "es",
+  "blog": "7802274",
+  "date": "2026-11-13",
+  "time": "18:04",
+  "voice": "Jessica",
+  "script": "Si compras en Hacoo, estás pagando de más. Pon el código de la pantalla donde dice cupón... dale a solicitar... y fíjate en el precio. Te descuenta el cien por cien, hasta ciento veinte euros. De treinta y nueve euros... me quedo en tres con setenta, que es el envío. Envíaselo a quien compra en Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "pon"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "fíjate"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "de"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "envíaselo",
+    "enviáselo",
+    "envíasela"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "SI COMPRAS EN HACOO",
+    "ESTÁS PAGANDO DE MÁS",
+    "(CUPÓN 120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "FÍJATE EN EL PRECIO |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "DE 39€...",
+    "A 3,70€ (EL ENVÍO)"
+   ],
+   "cta": [
+    "ENVÍASELO A QUIEN",
+    "COMPRA EN HACOO |emo:bag|"
+   ]
+  },
+  "hookv": "drop",
+  "mark": "rect",
+  "end": "card",
+  "song": "trend2",
+  "caption": "si compras en hacoo estás pagando de más 👀 cupón 120HACOO: 100% de descuento hasta 120 €. Envíaselo a quien compra en hacoo #hacoo #cuponhacoo #codigodescuento",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S03",
+  "lang": "es",
+  "blog": "7801775",
+  "date": "2026-11-13",
+  "time": "18:29",
+  "voice": "Charlie",
+  "script": "Tutorial: cómo usar el cupón de ciento veinte euros de Hacoo. Copia el código que ves en pantalla y pégalo en el cupón... dale a solicitar... y listo. Cien por cien de descuento, hasta ciento veinte euros. Treinta y nueve euros... que se quedan en tres con setenta. Comenta si te ha funcionado.",
+  "anchors": {
+   "amt": [
+    "ciento",
+    "120"
+   ],
+   "h": [
+    "copia"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "listo"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "treinta",
+    "39"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "comenta"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "TUTORIAL CUPÓN HACOO",
+    "PASO A PASO",
+    "(120€ |emo:check|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "Y LISTO |emo:check|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "39 EUROS...",
+    "SE QUEDAN EN 3,70€"
+   ],
+   "cta": [
+    "COMENTA SI TE",
+    "HA FUNCIONADO |emo:pointdown|"
+   ]
+  },
+  "hookv": "check",
+  "mark": "circle",
+  "end": "total",
+  "song": "trend4",
+  "caption": "tutorial cupón hacoo paso a paso ✅ código 120HACOO: hasta 120 € de descuento, de 39,17 € a 3,70 €. Comenta si te ha funcionado #hacooespaña #cuponhacoo #tutorial",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S04",
+  "lang": "es",
+  "blog": "7690746",
+  "date": "2026-11-13",
+  "time": "18:53",
+  "voice": "Will",
+  "script": "Para. No pagues tu pedido de Hacoo todavía. Mete el código de la pantalla en la casilla... dale a solicitar... y mira lo que pasa. Es un cupón del cien por cien, con tope de ciento veinte euros. Solo pago el envío: de treinta y nueve euros... a tres con setenta. Sígueme para más cupones de Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "mete"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "mira"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "tope",
+    "con"
+   ],
+   "q1": [
+    "solo",
+    "sólo"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "sígueme",
+    "sigueme"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "NO PAGUES EN HACOO",
+    "TODAVÍA |emo:eyes|",
+    "(CUPÓN 120€ |emo:check|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "MIRA LO QUE PASA |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "SOLO PAGO EL ENVÍO",
+    "DE 39€ A 3,70€"
+   ],
+   "cta": [
+    "SÍGUEME PARA",
+    "MÁS CUPONES |emo:gift|"
+   ]
+  },
+  "hookv": "zoomout",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend1",
+  "caption": "no pagues tu pedido de hacoo todavía 👀 código descuento 120HACOO: 100% hasta 120 €, solo pagas el envío. Sígueme para más cupones #hacoo #codigohacoo #cuponhacoo",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S05",
+  "lang": "es",
+  "blog": "7992090",
+  "date": "2026-11-13",
+  "time": "19:16",
+  "voice": "Chris",
+  "script": "Mira lo que pasa cuando escribo esto en Hacoo. Teclea el código de la pantalla en el cupón... dale a solicitar... y ahí lo tienes. Cien por cien de descuento, hasta ciento veinte euros. Mi pedido pasa de treinta y nueve euros... a tres con setenta. Pregunta lo que quieras en comentarios.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "teclea"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "ahí"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "mi"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "pregunta"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "MIRA LO QUE PASA",
+    "SI ESCRIBO ESTO EN HACOO",
+    "(120€ |emo:eyes|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "AHÍ LO TIENES |emo:check|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "MI PEDIDO PASA DE 39€...",
+    "A 3,70€"
+   ],
+   "cta": [
+    "PREGUNTA LO QUE QUIERAS",
+    "EN COMENTARIOS |emo:pointdown|"
+   ]
+  },
+  "hookv": "card",
+  "mark": "circle",
+  "end": "total",
+  "song": "trend3",
+  "caption": "mira lo que pasa con este cupón de hacoo 👀 120HACOO: 100% de descuento hasta 120 €, de 39,17 € a 3,70 €. Pregunta lo que quieras en comentarios #cuponhacoo #hacoo #codigodescuento",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S06",
+  "lang": "es",
+  "blog": "7802274",
+  "date": "2026-11-14",
+  "time": "17:49",
+  "voice": "Charlie",
+  "script": "Cómo pagar menos en Hacoo: cupón de ciento veinte euros. Escribe el código de la pantalla en la casilla del cupón... dale a solicitar... y mira el total. Te descuenta el cien por cien, hasta ciento veinte euros. Treinta y nueve euros... que se quedan en tres con setenta. Guárdalo para tu próximo pedido.",
+  "anchors": {
+   "amt": [
+    "ciento",
+    "120"
+   ],
+   "h": [
+    "escribe"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "mira"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "treinta",
+    "39"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "guárdalo",
+    "guardalo",
+    "guárdelo"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CÓMO PAGAR MENOS",
+    "EN HACOO",
+    "(CUPÓN 120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "MIRA EL TOTAL |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "39 EUROS...",
+    "SE QUEDAN EN 3,70€"
+   ],
+   "cta": [
+    "GUÁRDALO PARA",
+    "TU PRÓXIMO PEDIDO |emo:pin|"
+   ]
+  },
+  "hookv": "cart",
+  "mark": "rect",
+  "end": "card",
+  "song": "trend5",
+  "caption": "cómo pagar menos en hacoo ✅ cupón 120HACOO: 100% de descuento hasta 120 €. Guárdalo para tu próximo pedido #hacoo #cuponhacoo #ahorrar",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S07",
+  "lang": "es",
+  "blog": "7801775",
+  "date": "2026-11-14",
+  "time": "18:12",
+  "voice": "Liam",
+  "script": "De treinta y nueve euros a tres con setenta en Hacoo. Así. Pon el código de la pantalla donde dice cupón... dale a solicitar... y fíjate en el precio. Cien por cien de descuento, hasta ciento veinte euros. Solo pago el envío: de treinta y nueve euros... a tres con setenta. Envíaselo a quien compra en Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "pon"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "fíjate"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "solo",
+    "sólo"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "envíaselo",
+    "enviáselo",
+    "envíasela"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "MI PEDIDO DE HACOO",
+    "DE 39,17€ A 3,70€",
+    "(CUPÓN 120€ |emo:check|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "FÍJATE EN EL PRECIO |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "SOLO PAGO EL ENVÍO",
+    "DE 39€ A 3,70€"
+   ],
+   "cta": [
+    "ENVÍASELO A QUIEN",
+    "COMPRA EN HACOO |emo:bag|"
+   ]
+  },
+  "hookv": "drop",
+  "mark": "circle",
+  "end": "total",
+  "song": "gone",
+  "caption": "de 39,17 € a 3,70 € en hacoo 😳 cupón 120HACOO: 100% de descuento hasta 120 €. Envíaselo a quien compra en hacoo #cuponhacoo #hacoo #hacco",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S08",
+  "lang": "es",
+  "blog": "7690746",
+  "date": "2026-11-14",
+  "time": "18:37",
+  "voice": "Jessica",
+  "script": "Código descuento de Hacoo para noviembre: ciento veinte euros. Teclea el código de la pantalla en el cupón... dale a solicitar... y ahí lo tienes. Es un cupón del cien por cien, con tope de ciento veinte euros. Mi pedido pasa de treinta y nueve euros... a tres con setenta. Comenta si te ha funcionado.",
+  "anchors": {
+   "amt": [
+    "ciento",
+    "120"
+   ],
+   "h": [
+    "teclea"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "ahí"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "tope",
+    "con"
+   ],
+   "q1": [
+    "mi"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "comenta"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CÓDIGO DESCUENTO HACOO",
+    "NOVIEMBRE 2026",
+    "(120€ |emo:gift|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "AHÍ LO TIENES |emo:check|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "MI PEDIDO PASA DE 39€...",
+    "A 3,70€"
+   ],
+   "cta": [
+    "COMENTA SI TE",
+    "HA FUNCIONADO |emo:pointdown|"
+   ]
+  },
+  "hookv": "check",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend2",
+  "caption": "código descuento hacoo noviembre 2026 ✅ 120HACOO: 100% hasta 120 €, de 39,17 € a 3,70 €. Comenta si te ha funcionado #codigodescuento #hacoo #codigohacoo",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S09",
+  "lang": "es",
+  "blog": "7992090",
+  "date": "2026-11-14",
+  "time": "19:03",
+  "voice": "Will",
+  "script": "Antes de pagar en Hacoo, prueba este cupón. Copia el código que ves en pantalla y pégalo en el cupón... dale a solicitar... y listo. Cien por cien de descuento, hasta ciento veinte euros. De treinta y nueve euros... me quedo en tres con setenta, que es el envío. Sígueme para más cupones de Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "copia"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "listo"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "de"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "sígueme",
+    "sigueme"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "ANTES DE PAGAR",
+    "EN HACOO, PRUEBA ESTO",
+    "(CUPÓN 120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "Y LISTO |emo:check|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "DE 39€...",
+    "A 3,70€ (EL ENVÍO)"
+   ],
+   "cta": [
+    "SÍGUEME PARA",
+    "MÁS CUPONES |emo:gift|"
+   ]
+  },
+  "hookv": "zoomout",
+  "mark": "circle",
+  "end": "card",
+  "song": "trend4",
+  "caption": "antes de pagar en hacoo prueba este cupón ✅ 120HACOO: 100% de descuento hasta 120 €, solo pagas el envío. Sígueme para más cupones #hacoo #cuponhacoo #codigohacoo",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S10",
+  "lang": "es",
+  "blog": "7905293",
+  "date": "2026-11-15",
+  "time": "17:44",
+  "voice": "Chris",
+  "script": "¿Hacoo tiene un cupón de ciento veinte euros? Sí, mira. Mete el código de la pantalla en la casilla... dale a solicitar... y mira lo que pasa. Te descuenta el cien por cien, hasta ciento veinte euros. Mi pedido pasa de treinta y nueve euros... a tres con setenta. Pregunta lo que quieras en comentarios.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "mete"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "mira"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "mi"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "pregunta"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "¿CUPÓN DE HACOO",
+    "DE 120 EUROS?",
+    "(SÍ, MIRA |emo:eyes|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "MIRA LO QUE PASA |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "MI PEDIDO PASA DE 39€...",
+    "A 3,70€"
+   ],
+   "cta": [
+    "PREGUNTA LO QUE QUIERAS",
+    "EN COMENTARIOS |emo:pointdown|"
+   ]
+  },
+  "hookv": "card",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend1",
+  "caption": "¿hacoo tiene un cupón de 120 €? sí ✅ código 120HACOO: 100% de descuento hasta 120 €. Pregunta lo que quieras en comentarios #hacoo #cuponhacoo #codigodescuento",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S11",
+  "lang": "es",
+  "blog": "7802274",
+  "date": "2026-11-15",
+  "time": "18:08",
+  "voice": "Will",
+  "script": "Así se pone un código en Hacoo, en diez segundos. Escribe el código de la pantalla en la casilla del cupón... dale a solicitar... y mira el total. Es un cupón del cien por cien, con tope de ciento veinte euros. Treinta y nueve euros... que se quedan en tres con setenta. Guárdalo para tu próximo pedido.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "escribe"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "mira"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "tope",
+    "con"
+   ],
+   "q1": [
+    "treinta",
+    "39"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "guárdalo",
+    "guardalo",
+    "guárdelo"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CÓMO PONER UN CÓDIGO",
+    "EN HACOO",
+    "(CUPÓN 120€ |emo:check|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "MIRA EL TOTAL |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "39 EUROS...",
+    "SE QUEDAN EN 3,70€"
+   ],
+   "cta": [
+    "GUÁRDALO PARA",
+    "TU PRÓXIMO PEDIDO |emo:pin|"
+   ]
+  },
+  "hookv": "check",
+  "mark": "circle",
+  "end": "card",
+  "song": "trend3",
+  "caption": "cómo poner un código en hacoo ✅ cupón 120HACOO: 100% de descuento hasta 120 €, de 39,17 € a 3,70 €. Guárdalo para tu próximo pedido #codigohacoo #hacoo #tutorial",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S12",
+  "lang": "es",
+  "blog": "7801775",
+  "date": "2026-11-15",
+  "time": "18:33",
+  "voice": "Jessica",
+  "script": "Ciento veinte euros de descuento en Hacoo con un solo código. Pon el código de la pantalla donde dice cupón... dale a solicitar... y fíjate en el precio. Cien por cien de descuento, hasta ciento veinte euros. De treinta y nueve euros... me quedo en tres con setenta, que es el envío. Envíaselo a quien compra en Hacoo.",
+  "anchors": {
+   "amt": [
+    "ciento",
+    "120"
+   ],
+   "h": [
+    "pon"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "fíjate"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "de"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "envíaselo",
+    "enviáselo",
+    "envíasela"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "DESCUENTO EN HACOO",
+    "CON UN SOLO CÓDIGO",
+    "(120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "FÍJATE EN EL PRECIO |emo:eyes|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "DE 39€...",
+    "A 3,70€ (EL ENVÍO)"
+   ],
+   "cta": [
+    "ENVÍASELO A QUIEN",
+    "COMPRA EN HACOO |emo:bag|"
+   ]
+  },
+  "hookv": "drop",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend5",
+  "caption": "120 € de descuento en hacoo con un solo código 😳 120HACOO: 100% hasta 120 €, solo pagas el envío. Envíaselo a quien compra en hacoo #hacoo #cuponhacoo #descuento",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S13",
+  "lang": "es",
+  "blog": "7690746",
+  "date": "2026-11-15",
+  "time": "18:57",
+  "voice": "Liam",
+  "script": "Cupón de Hacoo de ciento veinte euros, paso a paso. Teclea el código de la pantalla en el cupón... dale a solicitar... y ahí lo tienes. Te descuenta el cien por cien, hasta ciento veinte euros. Solo pago el envío: de treinta y nueve euros... a tres con setenta. Comenta si te ha funcionado.",
+  "anchors": {
+   "amt": [
+    "ciento",
+    "120"
+   ],
+   "h": [
+    "teclea"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "ahí"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "hasta"
+   ],
+   "q1": [
+    "solo",
+    "sólo"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "comenta"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CUPÓN HACCO",
+    "PASO A PASO",
+    "(120€ |emo:gift|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "AHÍ LO TIENES |emo:check|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "SOLO PAGO EL ENVÍO",
+    "DE 39€ A 3,70€"
+   ],
+   "cta": [
+    "COMENTA SI TE",
+    "HA FUNCIONADO |emo:pointdown|"
+   ]
+  },
+  "hookv": "cart",
+  "mark": "circle",
+  "end": "total",
+  "song": "gone",
+  "caption": "cupón hacco paso a paso ✅ código 120HACOO en hacoo: 100% de descuento hasta 120 €. Comenta si te ha funcionado #hacco #hacoo #cuponhacoo",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "S14",
+  "lang": "es",
+  "blog": "7992090",
+  "date": "2026-11-15",
+  "time": "19:21",
+  "voice": "Charlie",
+  "script": "¿Vas a hacer un pedido en Hacoo? Usa antes este cupón. Copia el código que ves en pantalla y pégalo en el cupón... dale a solicitar... y listo. Es un cupón del cien por cien, con tope de ciento veinte euros. Mi pedido pasa de treinta y nueve euros... a tres con setenta. Sígueme para más cupones de Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "copia"
+   ],
+   "ap": [
+    "dale"
+   ],
+   "rev": [
+    "listo"
+   ],
+   "s100": [
+    "cien",
+    "100",
+    "100%"
+   ],
+   "hasta": [
+    "tope",
+    "con"
+   ],
+   "q1": [
+    "mi"
+   ],
+   "drop": [
+    "tres",
+    "3",
+    "3,70",
+    "370",
+    "3.70"
+   ],
+   "cta": [
+    "sígueme",
+    "sigueme"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "¿VAS A PEDIR EN HACOO?",
+    "USA ANTES ESTE CUPÓN",
+    "(120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "DALE A SOLICITAR"
+   ],
+   "rev": "Y LISTO |emo:check|",
+   "c100": [
+    "100% DE DESCUENTO",
+    "HASTA 120€ |emo:moneyfly|"
+   ],
+   "q": [
+    "MI PEDIDO PASA DE 39€...",
+    "A 3,70€"
+   ],
+   "cta": [
+    "SÍGUEME PARA",
+    "MÁS CUPONES |emo:gift|"
+   ]
+  },
+  "hookv": "zoomout",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend2",
+  "caption": "¿vas a pedir en hacoo? usa antes este cupón ✅ 120HACOO: 100% de descuento hasta 120 €, de 39,17 € a 3,70 €. Sígueme para más cupones #hacoo #cuponhacoo #codigohacoo",
+  "comment": "código: 120HACOO ✅ (hasta 120 € de descuento)"
+ },
+ {
+  "id": "F01",
+  "lang": "fr",
+  "blog": "7801996",
+  "date": "2026-11-13",
+  "time": "09:23",
+  "voice": "Charlie",
+  "script": "Tuto : comment mettre un code promo sur Hacoo. Écris le code affiché à l'écran dans la case coupon... appuie sur appliquer... et regarde le total. Cent pour cent de réduction, jusqu'à cent vingt. Ma commande passe de trente-six... à zéro. Enregistre la vidéo pour ta prochaine commande.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "écris",
+    "ecris"
+   ],
+   "ap": [
+    "appuie"
+   ],
+   "rev": [
+    "regarde"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "ma"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "enregistre"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "COMMENT METTRE",
+    "UN CODE PROMO SUR HACOO",
+    "(TUTO |emo:check|)"
+   ],
+   "tap": [
+    "APPUIE SUR",
+    "APPLIQUER"
+   ],
+   "rev": "REGARDE LE TOTAL |emo:eyes|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "MA COMMANDE PASSE DE 36,15...",
+    "À 0,00"
+   ],
+   "cta": [
+    "ENREGISTRE LA VIDÉO",
+    "POUR TA COMMANDE |emo:pin|"
+   ]
+  },
+  "hookv": "check",
+  "mark": "circle",
+  "end": "total",
+  "song": "trend1",
+  "caption": "comment mettre un code promo sur hacoo ✅ code 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Enregistre la vidéo #codepromohacoo #hacoo #tuto",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F02",
+  "lang": "fr",
+  "blog": "7968754",
+  "date": "2026-11-13",
+  "time": "09:49",
+  "voice": "Liam",
+  "script": "Comment payer moins cher sur Hacoo. Tape le code que tu vois à l'écran... appuie sur le bouton rouge... et regarde le prix. Moins cent pour cent sur la commande, jusqu'à cent vingt. Trente-six au départ... et zéro à payer, livraison incluse. Envoie-la à quelqu'un qui commande sur Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "tape",
+    "tap"
+   ],
+   "ap": [
+    "appuie"
+   ],
+   "rev": [
+    "regarde"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "trente",
+    "36",
+    "trente-six"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "envoie",
+    "envoie-la",
+    "envoi"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "COMMENT PAYER",
+    "MOINS CHER SUR HACOO",
+    "(JUSQU'À 120 |emo:moneyfly|)"
+   ],
+   "tap": [
+    "APPUIE SUR",
+    "LE BOUTON ROUGE"
+   ],
+   "rev": "REGARDE LE PRIX |emo:eyes|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "36,15 AU DÉPART...",
+    "0,00 À PAYER"
+   ],
+   "cta": [
+    "ENVOIE-LA À QUELQU'UN",
+    "QUI COMMANDE SUR HACOO |emo:bag|"
+   ]
+  },
+  "hookv": "card",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend4",
+  "caption": "comment payer moins cher sur hacoo 👀 code promo 120HACOO : -100% jusqu'à 120 € + livraison gratuite. Envoie-la à quelqu'un qui commande sur hacoo #hacoo #codepromo #bonplan",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F03",
+  "lang": "fr",
+  "blog": "7968754",
+  "date": "2026-11-14",
+  "time": "08:26",
+  "voice": "Jessica",
+  "script": "Regarde ce qui se passe quand j'écris ça sur Hacoo. Copie le code de l'écran et colle-le dans coupon... clique sur appliquer... et voilà. Cent pour cent de réduction, jusqu'à cent vingt. Avec la livraison gratuite : de trente-six... à zéro. Abonne-toi pour d'autres codes Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "copie",
+    "copy"
+   ],
+   "ap": [
+    "clique"
+   ],
+   "rev": [
+    "voilà",
+    "voila"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "avec"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "abonne",
+    "abonne-toi"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "REGARDE CE QUI SE PASSE",
+    "QUAND J'ÉCRIS ÇA SUR HACOO",
+    "(JUSQU'À 120 |emo:eyes|)"
+   ],
+   "tap": [
+    "CLIQUE SUR",
+    "APPLIQUER"
+   ],
+   "rev": "ET VOILÀ |emo:check|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "LIVRAISON GRATUITE",
+    "DE 36,15 À 0,00"
+   ],
+   "cta": [
+    "ABONNE-TOI POUR",
+    "D'AUTRES CODES |emo:gift|"
+   ]
+  },
+  "hookv": "drop",
+  "mark": "circle",
+  "end": "card",
+  "song": "trend2",
+  "caption": "regarde ce code promo hacoo 👀 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Abonne-toi pour d'autres codes #hacoo #codepromohacoo #hacco",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F04",
+  "lang": "fr",
+  "blog": "7841739",
+  "date": "2026-11-14",
+  "time": "08:52",
+  "voice": "Charlie",
+  "script": "Code promo Hacoo de novembre : jusqu'à cent vingt. Mets le code de l'écran dans la case du coupon... clique sur appliquer... et c'est fait. Moins cent pour cent sur la commande, jusqu'à cent vingt. Ma commande passe de trente-six... à zéro. Pose ta question en commentaire.",
+  "anchors": {
+   "amt": [
+    "cent",
+    "120"
+   ],
+   "h": [
+    "mets",
+    "met",
+    "mais"
+   ],
+   "ap": [
+    "clique"
+   ],
+   "rev": [
+    "c'est",
+    "cest",
+    "fait"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "ma"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "pose"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CODE PROMO HACOO",
+    "NOVEMBRE 2026",
+    "(JUSQU'À 120 |emo:moneyfly|)"
+   ],
+   "tap": [
+    "CLIQUE SUR",
+    "APPLIQUER"
+   ],
+   "rev": "C'EST FAIT |emo:check|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "MA COMMANDE PASSE DE 36,15...",
+    "À 0,00"
+   ],
+   "cta": [
+    "POSE TA QUESTION",
+    "EN COMMENTAIRE |emo:pointdown|"
+   ]
+  },
+  "hookv": "zoomout",
+  "mark": "rect",
+  "end": "total",
+  "song": "gone",
+  "caption": "code promo hacoo novembre 2026 ✅ 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Pose ta question en commentaire #codepromohacoo #hacoo #codereduction",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F05",
+  "lang": "fr",
+  "blog": "7801996",
+  "date": "2026-11-14",
+  "time": "09:34",
+  "voice": "Liam",
+  "script": "Stop. Ne paie pas ta commande Hacoo tout de suite. Écris le code affiché à l'écran dans la case coupon... appuie sur appliquer... et regarde le total. Cent pour cent de réduction, jusqu'à cent vingt. Trente-six au départ... et zéro à payer, livraison incluse. Envoie-la à quelqu'un qui commande sur Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "écris",
+    "ecris"
+   ],
+   "ap": [
+    "appuie"
+   ],
+   "rev": [
+    "regarde"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "trente",
+    "36",
+    "trente-six"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "envoie",
+    "envoie-la",
+    "envoi"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "NE PAIE PAS",
+    "TA COMMANDE HACOO",
+    "(PAS ENCORE |emo:eyes|)"
+   ],
+   "tap": [
+    "APPUIE SUR",
+    "APPLIQUER"
+   ],
+   "rev": "REGARDE LE TOTAL |emo:eyes|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "36,15 AU DÉPART...",
+    "0,00 À PAYER"
+   ],
+   "cta": [
+    "ENVOIE-LA À QUELQU'UN",
+    "QUI COMMANDE SUR HACOO |emo:bag|"
+   ]
+  },
+  "hookv": "card",
+  "mark": "circle",
+  "end": "total",
+  "song": "trend5",
+  "caption": "ne paie pas ta commande hacoo tout de suite 👀 code réduction 120HACOO : -100% jusqu'à 120 € + livraison gratuite. Envoie-la à quelqu'un qui commande sur hacoo #hacoo #codereduction #codepromo",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F06",
+  "lang": "fr",
+  "blog": "7801996",
+  "date": "2026-11-15",
+  "time": "08:41",
+  "voice": "Jessica",
+  "script": "Avant de payer sur Hacoo, essaie ce code. Tape le code que tu vois à l'écran... appuie sur le bouton rouge... et regarde le prix. Moins cent pour cent sur la commande, jusqu'à cent vingt. Ma commande passe de trente-six... à zéro. Enregistre la vidéo pour ta prochaine commande.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "tape",
+    "tap"
+   ],
+   "ap": [
+    "appuie"
+   ],
+   "rev": [
+    "regarde"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "ma"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "enregistre"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "AVANT DE PAYER",
+    "SUR HACOO, ESSAIE ÇA",
+    "(JUSQU'À 120 |emo:gift|)"
+   ],
+   "tap": [
+    "APPUIE SUR",
+    "LE BOUTON ROUGE"
+   ],
+   "rev": "REGARDE LE PRIX |emo:eyes|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "MA COMMANDE PASSE DE 36,15...",
+    "À 0,00"
+   ],
+   "cta": [
+    "ENREGISTRE LA VIDÉO",
+    "POUR TA COMMANDE |emo:pin|"
+   ]
+  },
+  "hookv": "check",
+  "mark": "rect",
+  "end": "card",
+  "song": "trend3",
+  "caption": "avant de payer sur hacoo essaie ce code promo ✅ 120HACOO : -100% jusqu'à 120 € + livraison gratuite. Enregistre la vidéo #hacoo #codepromohacoo #astuce",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F07",
+  "lang": "fr",
+  "blog": "7968754",
+  "date": "2026-11-15",
+  "time": "09:07",
+  "voice": "Charlie",
+  "script": "Si tu commandes sur Hacoo, tu paies trop cher. Copie le code de l'écran et colle-le dans coupon... clique sur appliquer... et voilà. Cent pour cent de réduction, jusqu'à cent vingt. Avec la livraison gratuite : de trente-six... à zéro. Abonne-toi pour d'autres codes Hacoo.",
+  "anchors": {
+   "amt": null,
+   "h": [
+    "copie",
+    "copy"
+   ],
+   "ap": [
+    "clique"
+   ],
+   "rev": [
+    "voilà",
+    "voila"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "avec"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "abonne",
+    "abonne-toi"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "SI TU COMMANDES SUR HACOO",
+    "TU PAIES TROP CHER",
+    "(JUSQU'À 120 |emo:moneyfly|)"
+   ],
+   "tap": [
+    "CLIQUE SUR",
+    "APPLIQUER"
+   ],
+   "rev": "ET VOILÀ |emo:check|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "LIVRAISON GRATUITE",
+    "DE 36,15 À 0,00"
+   ],
+   "cta": [
+    "ABONNE-TOI POUR",
+    "D'AUTRES CODES |emo:gift|"
+   ]
+  },
+  "hookv": "drop",
+  "mark": "circle",
+  "end": "total",
+  "song": "trend1",
+  "caption": "si tu commandes sur hacoo tu paies trop cher 👀 code promo 120HACOO : -100% sur ma commande, jusqu'à 120 €. Abonne-toi pour d'autres codes #hacoo #codepromo #bonplan",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "F08",
+  "lang": "fr",
+  "blog": "7841739",
+  "date": "2026-11-15",
+  "time": "09:53",
+  "voice": "Liam",
+  "script": "Code réduction Hacoo : moins cent pour cent sur ma commande. Mets le code de l'écran dans la case du coupon... clique sur appliquer... et c'est fait. Moins cent pour cent sur la commande, jusqu'à cent vingt. Ma commande passe de trente-six... à zéro. Pose ta question en commentaire.",
+  "anchors": {
+   "amt": [
+    "cent",
+    "100",
+    "100%",
+    "moins"
+   ],
+   "h": [
+    "mets",
+    "met",
+    "mais"
+   ],
+   "ap": [
+    "clique"
+   ],
+   "rev": [
+    "c'est",
+    "cest",
+    "fait"
+   ],
+   "s100": [
+    "cent",
+    "100",
+    "100%",
+    "moins",
+    "-100%"
+   ],
+   "hasta": [
+    "jusqu'à",
+    "jusqua",
+    "jusqu"
+   ],
+   "q1": [
+    "ma"
+   ],
+   "drop": [
+    "zéro",
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "pose"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "CODE RÉDUCTION HACOO",
+    "SUR MA COMMANDE",
+    "(-100% |emo:check|)"
+   ],
+   "tap": [
+    "CLIQUE SUR",
+    "APPLIQUER"
+   ],
+   "rev": "C'EST FAIT |emo:check|",
+   "c100": [
+    "-100% DE RÉDUCTION",
+    "JUSQU'À 120 |emo:gift|"
+   ],
+   "q": [
+    "MA COMMANDE PASSE DE 36,15...",
+    "À 0,00"
+   ],
+   "cta": [
+    "POSE TA QUESTION",
+    "EN COMMENTAIRE |emo:pointdown|"
+   ]
+  },
+  "hookv": "zoomout",
+  "mark": "rect",
+  "end": "total",
+  "song": "trend2",
+  "caption": "code réduction hacoo ✅ 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Pose ta question en commentaire #codereduction #hacoo #codepromohacoo",
+  "comment": "code : 120HACOO ✅ (-100% jusqu'à 120 €)"
+ },
+ {
+  "id": "E01",
+  "lang": "en",
+  "blog": "7905293",
+  "date": "2026-11-14",
+  "time": "17:27",
+  "voice": "Liam",
+  "script": "Hacoo discount code for November: up to one hundred twenty euros off. Type the code on screen into the coupon box... tap apply... and watch the total. One hundred percent off, up to one hundred twenty euros. My order goes from seventy euros... to zero, with free shipping. Save this for your next order.",
+  "anchors": {
+   "amt": [
+    "up"
+   ],
+   "h": [
+    "type"
+   ],
+   "ap": [
+    "tap"
+   ],
+   "rev": [
+    "watch"
+   ],
+   "s100": [
+    "one",
+    "100",
+    "100%",
+    "hundred"
+   ],
+   "hasta": [
+    "up"
+   ],
+   "q1": [
+    "my"
+   ],
+   "drop": [
+    "zero",
+    "0"
+   ],
+   "cta": [
+    "save"
+   ]
+  },
+  "rows": {
+   "hook": [
+    "HACOO DISCOUNT CODE",
+    "FOR NOVEMBER",
+    "(UP TO 120€ |emo:moneyfly|)"
+   ],
+   "tap": [
+    "TAP APPLY"
+   ],
+   "rev": "WATCH THE TOTAL |emo:eyes|",
+   "c100": [
+    "100% OFF",
+    "UP TO 120€ |emo:gift|"
+   ],
+   "q": [
+    "MY ORDER: 70,34€...",
+    "0,00€ + FREE SHIPPING"
+   ],
+   "cta": [
+    "SAVE THIS FOR",
+    "YOUR NEXT ORDER |emo:pin|"
+   ]
+  },
+  "hookv": "check",
+  "mark": "circle",
+  "end": "total",
+  "song": "trend3",
+  "caption": "hacoo discount code for november ✅ code 120HACOO: 100% off up to 120 € + free shipping. Save it for your next order #hacoo #hacoocode #discountcode",
+  "comment": "code: 120HACOO ✅ (100% off up to 120 €)"
+ }
+]

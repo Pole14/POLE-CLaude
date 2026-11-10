@@ -46,6 +46,18 @@ def rec_frame(t):
 RX = [a for a, _ in sp['rmap']]; RY = [b for _, b in sp['rmap']]
 
 
+def rec_time(t):
+    """Tiempo de grabación para el instante t. Un salto (tramo muy corto con mucho cambio) es un corte seco:
+    nunca se interpola, para que no se cuele un fotograma de en medio."""
+    if t <= RX[0]: return RY[0]
+    if t >= RX[-1]: return RY[-1]
+    for i in range(len(RX) - 1):
+        if RX[i] <= t < RX[i + 1]:
+            if RX[i + 1] - RX[i] <= 0.04 and abs(RY[i + 1] - RY[i]) > 0.15: return RY[i]
+            return RY[i] + (RY[i + 1] - RY[i]) * (t - RX[i]) / (RX[i + 1] - RX[i])
+    return RY[-1]
+
+
 def ease(x):
     x = max(0.0, min(1.0, x)); return 1 - (1 - x) ** 3
 
@@ -128,8 +140,11 @@ def line_img(text, size, font):
     k = (text, size, font)
     if k not in _C:
         mw = sp.get('maxw', 930); s_ = size
-        if font == 'classic':
-            im = tkfont.classic([text if text.strip() else ' '], s_, EMO, maxw=mw)
+        if font in ('classic', 'box', 'darkbox'):
+            tx_ = (text if text.strip() else ' ').replace('*', '')
+            if font == 'classic': im = tkfont.classic([tx_], s_, EMO, maxw=mw)
+            elif font == 'box': im = tkfont.box([tx_], int(s_ * 0.86), EMO)
+            else: im = tkfont.box([tx_], int(s_ * 0.86), EMO, bg=(20, 20, 20, 255), fg=(255, 255, 255, 255))
             pad = Image.new('RGBA', (im.width + 16, im.height + 24), (0, 0, 0, 0)); pad.alpha_composite(im, (8, 12)); im = pad
         else:
             im = hline(text if text.strip() else ' ', s_, font)
@@ -144,6 +159,23 @@ def pop_img(im, u):
     r = im.resize((max(1, int(im.width * sc)), max(1, int(im.height * sc))), Image.LANCZOS)
     if u < 0.5: r.putalpha(r.getchannel('A').point(lambda v: int(v * min(1.0, u * 2.4))))
     return r
+
+
+_B = {}
+
+
+def blur_in(im, u, key):
+    """Aparece desenfocado y se va enfocando (para la línea del número)."""
+    if u >= 1: return im
+    u = max(0.0, u); q = int(round(u * 12)); k = (key, q)
+    if k not in _B:
+        uu = q / 12; rad = 20 * (1 - uu) ** 1.4
+        r = im.filter(ImageFilter.GaussianBlur(rad)) if rad > 0.4 else im.copy()
+        sc = 1.1 - 0.1 * ease(uu)
+        r = r.resize((int(r.width * sc), int(r.height * sc)), Image.LANCZOS)
+        r.putalpha(r.getchannel('A').point(lambda v: int(v * min(1.0, 0.15 + uu * 1.1))))
+        _B[k] = r
+    return _B[k]
 
 
 def rect_layer(d, box, prog, width, S, col=(232, 20, 32, 255)):
@@ -206,7 +238,7 @@ ONLY = [float(x) for x in os.environ.get('ONLY', '').split(',') if x]
 for i in range(n):
     t = i / FPS
     if ONLY and not any(abs(t - o) < 0.5 / FPS for o in ONLY): continue
-    src = rec_frame(float(np.interp(t, RX, RY)))
+    src = rec_frame(rec_time(t))
     z, tx, ty = camera(t)
     M = np.float32([[z * K, 0, tx], [0, z * K, ty - z * OFF]])
     arr = cv2.warpAffine(src, M, (W, H), flags=cv2.INTER_CUBIC if z * K >= 1 else cv2.INTER_AREA, borderMode=cv2.BORDER_REPLICATE)
@@ -283,7 +315,7 @@ for i in range(n):
             im = line_img(r['text'], r['size'], g.get('font'))
             h_eff = im.height - 88 - 32 + int(r['size'] * g.get('gap', 0.06))
             if t >= r['at']:
-                pi = pop_img(im, (t - r['at']) / 0.2)
+                pi = blur_in(im, (t - r['at']) / 0.42, (r['text'], r['size'])) if r.get('fx') == 'blur' else pop_img(im, (t - r['at']) / 0.2)
                 if fo < 1: pi = pi.copy(); pi.putalpha(pi.getchannel('A').point(lambda v: int(v * fo)))
                 fr.alpha_composite(pi, (int(W / 2 - pi.width / 2), int(y + im.height / 2 - pi.height / 2 - 44)))
             y += h_eff
