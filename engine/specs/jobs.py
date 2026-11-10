@@ -61,21 +61,21 @@ FR_T={1:("Enregistre la vidéo pour ta prochaine commande.",['enregistre'],['ENR
       4:("Pose ta question en commentaire.",['pose'],['POSE TA QUESTION','EN COMMENTAIRE |emo:pointdown|'])}
 FR=[
 ('F01','FC','2026-11-13','09:23','Charlie',"Tuto : comment mettre un code promo sur Hacoo.",['COMMENT METTRE','UN CODE PROMO SUR HACOO','(TUTO |emo:check|)'],None,'check','circle','total','trend1',1,1,1,1,
- "comment mettre un code promo sur hacoo ✅ code 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Enregistre la vidéo #codepromohacoo #hacoo #tuto"),
+ "comment mettre un code promo sur hacoo ✅ code 120HACOO : -100% sur ma commande, jusqu'à 120 + livraison gratuite. Enregistre la vidéo #codepromohacoo #hacoo #tuto"),
 ('F02','FD','2026-11-13','09:49','Liam',"Comment payer moins cher sur Hacoo.",['COMMENT PAYER','MOINS CHER SUR HACOO','(JUSQU\'À 120 |emo:moneyfly|)'],None,'card','rect','total','trend4',3,2,2,2,
- "comment payer moins cher sur hacoo 👀 code promo 120HACOO : -100% jusqu'à 120 € + livraison gratuite. Envoie-la à quelqu'un qui commande sur hacoo #hacoo #codepromo #bonplan"),
+ "comment payer moins cher sur hacoo 👀 code promo 120HACOO : -100% jusqu'à 120 + livraison gratuite. Envoie-la à quelqu'un qui commande sur hacoo #hacoo #codepromo #bonplan"),
 ('F03','FD','2026-11-14','08:26','Jessica',"Regarde ce qui se passe quand j'écris ça sur Hacoo.",['REGARDE CE QUI SE PASSE','QUAND J\'ÉCRIS ÇA SUR HACOO','(JUSQU\'À 120 |emo:eyes|)'],None,'drop','circle','card','trend2',2,1,3,3,
- "regarde ce code promo hacoo 👀 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Abonne-toi pour d'autres codes #hacoo #codepromohacoo #hacco"),
+ "regarde ce code promo hacoo 👀 120HACOO : -100% sur ma commande, jusqu'à 120 + livraison gratuite. Abonne-toi pour d'autres codes #hacoo #codepromohacoo #hacco"),
 ('F04','FR','2026-11-14','08:52','Charlie',"Code promo Hacoo de novembre : jusqu'à cent vingt.",['CODE PROMO HACOO','NOVEMBRE 2026','(JUSQU\'À 120 |emo:moneyfly|)'],['cent','120'],'zoomout','rect','total','gone',4,2,1,4,
- "code promo hacoo novembre 2026 ✅ 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Pose ta question en commentaire #codepromohacoo #hacoo #codereduction"),
+ "code promo hacoo novembre 2026 ✅ 120HACOO : -100% sur ma commande, jusqu'à 120 + livraison gratuite. Pose ta question en commentaire #codepromohacoo #hacoo #codereduction"),
 ('F05','FC','2026-11-14','09:34','Liam',"Stop. Ne paie pas ta commande Hacoo tout de suite.",['NE PAIE PAS','TA COMMANDE HACOO','(PAS ENCORE |emo:eyes|)'],None,'card','circle','total','trend5',1,1,2,2,
- "ne paie pas ta commande hacoo tout de suite 👀 code réduction 120HACOO : -100% jusqu'à 120 € + livraison gratuite. Envoie-la à quelqu'un qui commande sur hacoo #hacoo #codereduction #codepromo"),
+ "ne paie pas ta commande hacoo tout de suite 👀 code réduction 120HACOO : -100% jusqu'à 120 + livraison gratuite. Envoie-la à quelqu'un qui commande sur hacoo #hacoo #codereduction #codepromo"),
 ('F06','FC','2026-11-15','08:41','Jessica',"Avant de payer sur Hacoo, essaie ce code.",['AVANT DE PAYER','SUR HACOO, ESSAIE ÇA','(JUSQU\'À 120 |emo:gift|)'],None,'check','rect','card','trend3',3,2,1,1,
- "avant de payer sur hacoo essaie ce code promo ✅ 120HACOO : -100% jusqu'à 120 € + livraison gratuite. Enregistre la vidéo #hacoo #codepromohacoo #astuce"),
+ "avant de payer sur hacoo essaie ce code promo ✅ 120HACOO : -100% jusqu'à 120 + livraison gratuite. Enregistre la vidéo #hacoo #codepromohacoo #astuce"),
 ('F07','FD','2026-11-15','09:07','Charlie',"Si tu commandes sur Hacoo, tu paies trop cher.",['SI TU COMMANDES SUR HACOO','TU PAIES TROP CHER','(JUSQU\'À 120 |emo:moneyfly|)'],None,'drop','circle','total','trend1',2,1,3,3,
- "si tu commandes sur hacoo tu paies trop cher 👀 code promo 120HACOO : -100% sur ma commande, jusqu'à 120 €. Abonne-toi pour d'autres codes #hacoo #codepromo #bonplan"),
+ "si tu commandes sur hacoo tu paies trop cher 👀 code promo 120HACOO : -100% sur ma commande, jusqu'à 120. Abonne-toi pour d'autres codes #hacoo #codepromo #bonplan"),
 ('F08','FR','2026-11-15','09:53','Liam',"Code réduction Hacoo : moins cent pour cent sur ma commande.",['CODE RÉDUCTION HACOO','SUR MA COMMANDE','(-100% |emo:check|)'],['cent','100','100%','moins'],'zoomout','rect','total','trend2',4,2,1,4,
- "code réduction hacoo ✅ 120HACOO : -100% sur ma commande, jusqu'à 120 € + livraison gratuite. Pose ta question en commentaire #codereduction #hacoo #codepromohacoo"),
+ "code réduction hacoo ✅ 120HACOO : -100% sur ma commande, jusqu'à 120 + livraison gratuite. Pose ta question en commentaire #codereduction #hacoo #codepromohacoo"),
 ]
 jobs=[]
 for (i,a,d,tm_,v,hk,hl,amt,hv,mk,en,sg,I,C,P,T,cap) in ES:
@@ -89,7 +89,7 @@ for (i,a,d,tm_,v,hk,hl,amt,hv,mk,en,sg,I,C,P,T,cap) in FR:
     jobs.append(dict(id=i,lang='fr',blog=ACC[a],date=d,time=tm_,voice=v,script=' '.join([hk,it,ct,pt,tt]),
       anchors=dict(amt=amt,h=hw,ap=aw,rev=rw,s100=['cent','100','100%','moins','-100%'],hasta=["jusqu'à",'jusqua','jusqu'],q1=qa,drop=['zéro','zero','0'],cta=ta),
       rows=dict(hook=hl,tap=tapl,rev=rtx,c100=['-100% DE RÉDUCTION',"JUSQU'À 120 |emo:gift|"],q=ql,cta=tl),
-      hookv=hv,mark=mk,end=en,song=sg,caption=cap,comment="code : 120HACOO ✅ (-100% jusqu'à 120 €)"))
+      hookv=hv,mark=mk,end=en,song=sg,caption=cap,comment="code : 120HACOO ✅ (-100% jusqu'à 120)"))
 jobs.append(dict(id='E01',lang='en',blog=ACC['R'],date='2026-11-14',time='17:27',voice='Liam',
   script="Hacoo discount code for November: up to one hundred twenty euros off. Type the code on screen into the coupon box... tap apply... and watch the total. One hundred percent off, up to one hundred twenty euros. My order goes from seventy euros... to zero, with free shipping. Save this for your next order.",
   anchors=dict(amt=['up'],h=['type'],ap=['tap'],rev=['watch'],s100=['one','100','100%','hundred'],hasta=['up'],q1=['my'],drop=['zero','0'],cta=['save']),

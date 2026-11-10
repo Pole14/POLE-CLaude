@@ -41,12 +41,13 @@ elif cmd=='align':
 elif cmd=='build':
     sys.path.insert(0,SC+'/t11'); import sb
     EM=[('moneyfly','moneyfly','fire'),('gift','moneyfly','moneyfly'),('fire','moneyfly','gift'),('moneyfly','fire','moneyfly'),('moneyfly','gift','fire')]
-    bad=[]
+    bad=[]; ALIAS={'teclea':['te'],'envoie':['en'],'pose':['posse']}
     for n,j in enumerate(sel(ids)):
         vn=j.get('wav') or f"v13_{j['id']}"
         if vn not in sb.WORDS: print('sin alinear',j['id']); continue
         W=sb.WORDS[vn]['w']; dur=sb.WORDS[vn]['dur']; A=j['anchors']
         def find(alts,after,before=1e9):
+            alts=list(alts)+[x for a in alts for x in ALIAS.get(a,[])]
             for w,s,e in W:
                 if s>after+0.01 and s<before:
                     nw=norm(w)
