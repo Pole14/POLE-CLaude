@@ -1,11 +1,15 @@
 # Tarea automática: fábrica de vídeos Hacoo (POLE14)
 
-## >>> NOVEDAD 10 nov 2026 (10:45) — ESTILO QUE POL QUIERE AHORA <<<
-- Pol (10 nov): "por ahora son los mejores que has hecho" → estilo SENCILLO CON MOVIMIENTO: grabación seguida, letra clásica de TikTok en minúsculas, líneas que entran con la voz, círculo/rectángulo rojo en la casilla y el botón, manita, cámara suave, billetes al bajar el precio. Motor: `engine/hero.py` (spec json) + `engine/mux3.py`; constructor y ejemplos en `engine/specs/` (sb.py, mk7.py, mk8.py).
-- Idioma del fondo = idioma del vídeo (Pol 10 nov): francés → grabación con la app en francés (scratchpad r4/rec.mp4, Londres, £36.15→£0.00; saltar rec 10.10→10.26 y cortar el aviso "produits vendus" 8.67→9.62); español → grabación española; inglés → grabación inglesa (Alemania, 70,34 €→0,00 €), aún sin vídeos porque no hay voces.
-- NUNCA subir vídeos sin voz (Pol 10 nov). ElevenLabs sin saldo/401 desde el 10 nov: Pol conectará otra cuenta. Hasta entonces no hay voces nuevas: avisar a Pol, no rellenar.
+## >>> NOVEDAD 10 nov 2026 (16:15) — ESTILO QUE POL QUIERE AHORA <<<
+- Pol (10 nov): "por ahora son los mejores que has hecho" → estilo SENCILLO CON MOVIMIENTO: grabación seguida, líneas que entran con la voz, círculo/rectángulo rojo en la casilla y el botón, manita, cámara suave, billetes al bajar el precio. Motor: `engine/hero.py` (spec json) + `engine/mux3.py`; constructor `engine/specs/sb.py`.
+- TIPOGRAFÍA (Pol 10 nov: "la del 1er vídeo de fable es perfecta"): SOLO la del hero → TikTok Sans Bold en MAYÚSCULAS, contorno negro, cifras/código en amarillo con brillo (`font=None` en sb.build). No variar fuentes.
+- GANCHO (Pol 10 nov): la frase del gancho se ve desde el fotograma 0; lo único que entra desenfocándose es la línea del importe ("(CUPÓN 120€)").
+- Idioma del fondo = idioma del vídeo: francés → scratchpad r4/rec.mp4 (Londres, £36.15→£0.00; en pantalla y en la descripción "jusqu'à 120" sin moneda); español → k120/rec.mp4 (39,17 €→3,70 €, nunca "envío gratis"); inglés → en/rec.mp4 (Alemania, 70,34 €→0,00 €).
+- NUNCA subir vídeos sin voz. ElevenLabs: cuenta nueva en plan Starter (de pago, 40.000 caracteres/mes), clave en scratchpad/.el_key (no escribirla nunca). Voces usadas: Liam, Charlie, Jessica, Will, Chris (eleven_multilingual_v2).
+- Tanda automática: `engine/specs/jobs.py` (guiones, ganchos, descripciones) → `gen.py tts|align|build` → `chk.py` → `run.sh ID` → `verify.py ID`. Pol quiere MUCHOS ganchos distintos para testear.
 - Falta el SFX de dinero: Pol tiene que pasar su zip de SFX (no inventar sonidos).
-- Programado 11 nov con el estilo nuevo en las 8 cuentas (los épicos antiguos de ese día quedaron en borrador). 13 nov: solo @reductionsxhacoo (hero FR). Del 13 en adelante faltan vídeos en todas las demás.
+- PROGRAMADO: 11 nov (8 cuentas, estilo nuevo), 12 nov (épicos antiguos), 13-15 nov (23 vídeos `videos/120g_*.mp4` + hero FR el 13 en @reductionsxhacoo; el 14 @hacoorabatt lleva el vídeo en inglés E01). Lo antiguo de esos días está en borrador. Del 16 nov en adelante faltan vídeos.
+- Pendiente: tras 3-4 días comparar visitas/retención por tipo de gancho (tabla en el doc del proyecto `claude/plan-ganchos-13-15-nov.md`) y contárselo a Pol antes de subir a 2-3/día.
 
 ## >>> ORDEN VIGENTE (9 nov 2026, 22:20) — MANDA SOBRE TODO LO DE ABAJO <<<
 - FULL CUPÓN 120 en TODAS las cuentas. NO hagas ni programes vídeos de POLE14 (no uses factory.py para crear posts).
