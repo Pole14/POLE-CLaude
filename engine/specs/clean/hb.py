@@ -18,12 +18,12 @@ for n, j in enumerate(J):
     if ids and j['id'] not in ids: continue
     R = L[j['lang']]; Y = R['y']; lang = j['lang']
     D = [dur(f"{V}h18_{j['id']}_{i}.wav") for i in range(6)]
-    mins = [2.3, 2.9, 1.6, 1.9, 1.9, 1.8]; pad = [0.45, 0.4, 0.5, 0.45, 0.45, 0.6]
+    mins = [2.3, 2.9, 1.6, 1.9, 1.9, 1.8]; pad = [0.12, 0.05, 0.05, 0.05, 0.05, 0.5]
     Ls = [round(max(m, d + p), 2) for m, d, p in zip(mins, D, pad)]
     S = [0.0]
     for x in Ls: S.append(round(S[-1] + x, 3))
     E = S[1:]; tot = S[-1]
-    voice = [[f"h18_{j['id']}_{i}", round(S[i] + (0.1 if i == 0 else 0.12), 3)] for i in range(6)]
+    voice = [[f"h18_{j['id']}_{i}", round(S[i] + (0.1 if i == 0 else 0.0), 3)] for i in range(6)]
     # ---- recording map
     rm = []
     def seg(*pts):

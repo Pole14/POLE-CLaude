@@ -18,12 +18,12 @@ for n, j in enumerate(J):
     if ids and j['id'] not in ids: continue
     R = L[j['lang']]; Y = R['y']; lang = j['lang']
     D = [dur(f"{V}c13_{j['id']}_{i}.wav") for i in range(6)]
-    mins = [2.3, 2.9, 1.6, 1.9, 1.9, 1.8]; pad = [0.45, 0.4, 0.5, 0.45, 0.45, 0.6]
+    mins = [2.3, 2.9, 1.6, 1.9, 1.9, 1.8]; pad = [0.12, 0.05, 0.05, 0.05, 0.05, 0.5]
     Ls = [round(max(m, d + p), 2) for m, d, p in zip(mins, D, pad)]
     S = [0.0]
     for x in Ls: S.append(round(S[-1] + x, 3))
     E = S[1:]; tot = S[-1]
-    voice = [[f"c13_{j['id']}_{i}", round(S[i] + (0.1 if i == 0 else 0.12), 3)] for i in range(6)]
+    voice = [[f"c13_{j['id']}_{i}", round(S[i] + (0.1 if i == 0 else 0.0), 3)] for i in range(6)]
     # ---- recording map
     rm = []
     def seg(*pts):
@@ -40,7 +40,7 @@ for n, j in enumerate(J):
         seg((S[1], 3.0), (S[1] + 0.6, 3.88), (E[1] - 0.15, 6.05))
         seg((S[2], 6.06), (S[2] + 0.4, 6.6), (S[2] + 0.42, 8.25), (T2, 8.42), (E[2] - 0.02, 8.62))
         seg((S[3], 9.62), (E[3] - 0.02, 10.09))
-        seg((S[4], 10.26), (S[4] + 0.3, 10.55), (tot, 11.85))
+        seg((S[4], 10.26), (S[4] + 0.3, 10.55), (tot, 11.6))
     else:
         seg((0, 1.6), (E[0] - 0.02, 3.2))
         seg((S[1], 4.1), (S[1] + 0.45, 4.6), (S[1] + 0.7, 4.85), (S[1] + 0.95, 5.35), (E[1] - 0.15, 7.55))
