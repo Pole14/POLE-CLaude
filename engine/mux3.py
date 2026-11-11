@@ -1,8 +1,8 @@
 import sys,json,subprocess
 # mux2.py vid spec.json out music.mp3 offset [lufs]
-vid,spec,out,M,off=sys.argv[1:6]; lufs=sys.argv[6] if len(sys.argv)>6 else '-28'  # música estable bajo la voz; Pol 9 nov: 'que se escuche un poquito más' (antes -31)
+vid,spec,out,M,off=sys.argv[1:6]; lufs=sys.argv[6] if len(sys.argv)>6 else '-22'  # Pol 11 nov: más alta (antes -28); música estable bajo la voz; Pol 9 nov: 'que se escuche un poquito más' (antes -31)
 sp=json.load(open(spec)); V=__import__('os').path.dirname(__import__('os').path.dirname(__import__('os').path.abspath(__file__)))+'/voices/'
-T=sp['tot']; ins=['-ss',str(off),'-t',str(T+0.5),'-i',M]
+T=sp['tot']; ins=['-stream_loop','-1','-ss',str(off),'-t',str(T+0.5),'-i',M]
 fc=[f'[1:a]aresample=48000,aformat=channel_layouts=stereo,loudnorm=I={lufs}:TP=-3:LRA=11,aresample=48000,afade=t=in:d=0.12,afade=t=out:st={T-0.6}:d=0.6[m]']
 for i,(f,t) in enumerate(sp['voice']):
     ins+=['-i',V+f+'.wav']; fc.append(f'[{i+2}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(t*1000)}|{int(t*1000)}[a{i}]')
