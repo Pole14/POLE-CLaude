@@ -1,5 +1,10 @@
 # Tarea automática: fábrica de vídeos Hacoo (POLE14)
 
+## >>> NOVEDAD 13 nov 2026 (noche) — CUPÓN BLACKF (200 €) <<<
+- Grabación nueva de Pol: `recs/blackf_es.mp4` (12 s, ES, Gran Via 28 Madrid). Producto 70,94 €, envío 3,70 € → 0,00 € (aquí SÍ "envío gratis"). Código BLACKF: "200€ DE DESCUENTO, hasta 200,00 €, del 13.11 al 30.11.2026, para productos específicos".
+- La grabación acaba en la ventana del cupón: NO se ve el total final a 0,00 €. No decir "pago 0 €" ni "gratis total"; sí "cupón de hasta 200 €" + "envío gratis".
+- Pol (13 nov): usarlo en TODAS las cuentas ES (@hacoocupones, @chinahero01, @90hacoo14, @hacoorabatt, @el.ceo.de.hacoo; @codigos_hacoo_ solo si sale buenísimo). Primero llenar huecos: @hacoocupones 14-16, @chinahero01 y @90hacoo14 el 16, y todas las ES el 17. Estilo hero (TikTok Sans Bold, voz ElevenLabs seguida). Nunca sin voz.
+
 ## >>> NOVEDAD 10 nov 2026 (16:15) — ESTILO QUE POL QUIERE AHORA <<<
 - Pol (10 nov): "por ahora son los mejores que has hecho" → estilo SENCILLO CON MOVIMIENTO: grabación seguida, líneas que entran con la voz, círculo/rectángulo rojo en la casilla y el botón, manita, cámara suave, billetes al bajar el precio. Motor: `engine/hero.py` (spec json) + `engine/mux3.py`; constructor `engine/specs/sb.py`.
 - TIPOGRAFÍA (Pol 10 nov: "la del 1er vídeo de fable es perfecta"): SOLO la del hero → TikTok Sans Bold en MAYÚSCULAS, contorno negro, cifras/código en amarillo con brillo (`font=None` en sb.build). No variar fuentes.
