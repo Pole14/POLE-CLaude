@@ -1,0 +1,6 @@
+[{"id":"X1","lang":"es","voice":"Will","song":"trend4","fmt":"X","rec":"../p25/rec.mp4","map":"h","code":"POL25","frm":70.94,"to":53.20,
+ "scenes":[["así baja el total en hacoo, con un solo código",0],["pon pol 25 en la casilla del cupón",0],["dale a solicitar, y mira el total",0],["25% de descuento, y envío gratis",0]]},
+ {"id":"Y1","lang":"es","voice":"Liam","song":"trend5","fmt":"Y","rec":"../h180/rec.mp4","map":"h","code":"HACOO180",
+ "scenes":[["3 pasos para pagar menos en hacoo",0],["uno, la casilla del cupón. dos, escribe este código",0],["tres, dale a solicitar, y mira el total",0],["100% de descuento, hasta 180 euros",0]]},
+ {"id":"Z1","lang":"es","voice":"Jessica","song":"trend3","fmt":"Z","rec":"/home/claude/pole-claude/recs/blackf_es.mp4","map":"b","code":"BLACKF",
+ "scenes":[["nota mental. no pagar en hacoo sin este cupón",0],["pon este código en la casilla del cupón",0],["pulsa solicitar, y mira cómo baja",0],["cupón de hasta 200 euros, y envío gratis",0]]}]
