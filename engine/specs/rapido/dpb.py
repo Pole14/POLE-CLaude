@@ -13,11 +13,33 @@ for j in J:
     text=' '.join(j['sents']); wav=f"{V}dp_{j['id']}.wav"; meta=f"{j['id']}_al.json"
     if not os.path.exists(meta):
         if vs is None: vs={v['name'].split(' ')[0]:v['voice_id'] for v in json.load(api('/v1/voices'))['voices']}
-        body={'text':text,'model_id':'eleven_multilingual_v2','voice_settings':{'stability':0.4,'similarity_boost':0.8,'style':0.45,'speed':1.18}}
+        body={'text':text,'model_id':'eleven_multilingual_v2','voice_settings':{'stability':0.45,'similarity_boost':0.8,'style':0.3,'speed':1.12}}
         r=json.load(api(f"/v1/text-to-speech/{vs[j['voice']]}/with-timestamps?output_format=mp3_44100_128",body))
         open('/tmp/_d.mp3','wb').write(base64.b64decode(r['audio_base64']))
-        subprocess.run(['ffmpeg','-v','error','-y','-i','/tmp/_d.mp3','-ar','48000','-ac','1',wav],check=True)
-        json.dump(r['alignment'],open(meta,'w'))
+        # quita el aire muerto: cada silencio de más de 0,26 s se deja en 0,14 s y las marcas de tiempo se recolocan igual
+        import numpy as np
+        x=np.frombuffer(subprocess.run(['ffmpeg','-v','error','-i','/tmp/_d.mp3','-f','f32le','-ac','1','-ar','48000','-'],capture_output=True).stdout,np.float32)
+        hop=480; e=np.abs(x[:len(x)//hop*hop]).reshape(-1,hop).mean(1); sil=e<0.006; cuts=[]; i=0
+        while i<len(sil):
+            if sil[i]:
+                k=i
+                while k<len(sil) and sil[k]: k+=1
+                if (k-i)*0.01>0.26 and i>0 and k<len(sil): cuts.append(((i+7)*0.01,(k-7)*0.01))
+                i=k
+            else: i+=1
+        keep=[]; p=0.0
+        for a,b in cuts: keep.append((p,a)); p=b
+        keep.append((p,len(x)/48000))
+        y=np.concatenate([x[int(a*48000):int(b*48000)] for a,b in keep])
+        def mp(t):
+            rem=0.0
+            for a,b in cuts:
+                if t>=b: rem+=b-a
+                elif t>a: return a-rem
+            return t-rem
+        al=r['alignment']; al['character_start_times_seconds']=[round(mp(t),3) for t in al['character_start_times_seconds']]; al['character_end_times_seconds']=[round(mp(t),3) for t in al['character_end_times_seconds']]
+        subprocess.run(['ffmpeg','-v','error','-y','-f','f32le','-ar','48000','-ac','1','-i','-',wav],input=y.tobytes(),check=True)
+        json.dump(al,open(meta,'w')); print(j['id'],'silencios recortados',len(cuts),'ahorro',round(sum(b-a for a,b in cuts),2),'s')
     al=json.load(open(meta)); cs=al['character_start_times_seconds']; ce=al['character_end_times_seconds']
     assert ''.join(al['characters'])==text
     dur=float(subprocess.run(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',wav],capture_output=True,text=True).stdout)
@@ -59,4 +81,4 @@ for j in J:
         'stamp':{'t':r(tSt),'lines':['-25%','SIN FECHA LÍMITE']},'ship':{'t':r(te),'text':'ENVÍO GRATIS'},
         'close':{'t':r(tC),'word':j['close'],'handle':HANDLE,'emo':j.get('cemo','pin'),'burst':'fire'},
         'punches':[[ts,0.06]]+[[t_,0.02] for _,t_ in tiles]+[[r(tTap),0.03],[r(tRes),0.07],[r(tSt+0.12),0.08],[r(tC+0.15),0.05]]}
-    json.dump(sp,open(f"{j['id']}.json",'w'),ensure_ascii=False); print(j['id'],'tot',tot,'S',[r(x) for x in S])
+    json.dump(sp,open(f"{j['id']}.json",'w'),ensure_ascii=False); json.dump({'tot':tot,'voice':[[f"dp_{j['id']}",0.0]],'song':j.get('song','trend3')},open(f"{j['id']}_base.json",'w')); print(j['id'],'tot',tot,'S',[r(x) for x in S])
