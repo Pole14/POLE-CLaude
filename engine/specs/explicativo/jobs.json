@@ -1,4 +1,6 @@
-[{"id":"E1","voice":"Liam","song":"trend2","theme":{"BG":[232,232,250]},"stamp1":["NO PAGUES","ESTO"],
-  "sents":["Si compras en hacoo, no pagues el precio completo.","Entra en tu pedido, busca la casilla del cupón, y escribe pol 25.","Toca solicitar y ya está: 25% de descuento, y envío gratis.","Guárdalo para tu próximo pedido.","Y sígueme para más cupones."]},
- {"id":"E2","voice":"Liam","song":"trend4","theme":{"BG":[226,241,232],"BLUE":[20,120,90]},"stamp1":["ESPERA","UN SEGUNDO"],
-  "sents":["¿Vas a pagar en hacoo? Espera un segundo.","Casi todo el mundo se salta la casilla del cupón. Tócala, y escribe pol 25.","Dale a solicitar, y mira el total: 25% menos, y envío gratis.","Ese dinero se queda en tu bolsillo.","Guarda el vídeo para la próxima vez."]}]
+[{"id":"E1","voice":"Liam","theme":{},"save":"Guárdalo","sticker1":["-25%","CÓDIGO"],
+  "sents":["Así se ahorra un 25% en hacoo.","Abre tu pedido, toca la casilla del cupón, y escribe pol 25.","Dale a solicitar: el total baja de 70 euros a 53, con envío gratis.","Guárdalo para tu próximo pedido."]},
+ {"id":"E2","voice":"Liam","theme":{"BG":[234,237,251],"GREEN":[72,84,220],"LINE":[205,210,235]},"save":"Sígueme","sticker1":["25%","MENOS"],
+  "sents":["Código de hacoo para noviembre: 25% de descuento.","En tu pedido, ve a la casilla del cupón, y escribe pol 25.","Pulsa solicitar, y el descuento se aplica al momento, con envío gratis.","Sígueme para más cupones."]},
+ {"id":"E3","voice":"Liam","theme":{"BG":[251,241,228],"GREEN":[222,92,28],"LINE":[232,215,195]},"save":"Compártelo","sticker1":["-25%","SIN LÍMITE"],
+  "sents":["¿Tienes un pedido en hacoo? Mira esto antes de pagar.","Toca la casilla del cupón, y escribe pol 25.","Dale a solicitar: 25% menos, y envío gratis, sin fecha límite.","Envíaselo a quien compra en hacoo."]}]

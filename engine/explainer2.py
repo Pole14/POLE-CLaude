@@ -13,6 +13,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
 SP = json.load(open(sys.argv[1])); OUT = sys.argv[2]
 W, H, FPS = 1080, 1920, 30
 BG = (226, 241, 232); INK = (15, 23, 42); GREEN = (22, 163, 74); MUTED = (120, 132, 150); LINE = (200, 214, 206); WHITE = (255, 255, 255)
+for _k, _v in SP.get('theme', {}).items(): globals()[_k] = tuple(_v)  # tema por vídeo: BG, INK, GREEN (acento), MUTED, LINE
 _F = {}
 
 
@@ -182,8 +183,9 @@ for i in range(n):
         u = ease((t - T1) / 0.4); uo = ease((t - T3) / 0.35) if t > T3 else 0
         put(fr, rec_card(interp(SP['rmap'], t)), W / 2, 830 + 700 * (1 - u) - 150 * uo, 1 - 0.1 * uo, alpha=1 - uo)
         stepper(fr, t, 1390 + 500 * (1 - ease((t - T1 - 0.15) / 0.4)) - 150 * uo, (1 - uo))
-        if SP['code_letters'][0][1] - 0.3 <= t < T2:
-            uo2 = ease((t - T2 + 0.25) / 0.25) if t > T2 - 0.25 else 0
+        TP = SP.get('t_tiles_off', T2)
+        if SP['code_letters'][0][1] - 0.3 <= t < TP:
+            uo2 = ease((t - TP + 0.25) / 0.25) if t > TP - 0.25 else 0
             put(fr, code_pill(t), W / 2, 1060, back((t - SP['code_letters'][0][1] + 0.3) / 0.35) * (1 - uo2))
         if SP['t_tap'] <= t < SP['t_tap'] + 0.55:
             p = (t - SP['t_tap']) / 0.55; x, y = SP['tap_xy']

@@ -51,6 +51,7 @@ for j in J:
     captions=[]
     for i,c in enumerate(caps):
         t1=caps[i+1][0][1]-0.03 if i+1<len(caps) else dur+1
+        c=[[w[0] if w[0].startswith('POL') else ('Hacoo'+w[0][5:].lower() if w[0].startswith('HACOO') else (w[0].capitalize() if q==0 else w[0].lower())),w[1],w[2]] for q,w in enumerate(c)]
         captions.append({'t0':round(max(0,c[0][1]-0.05),3) if i else 0,'t1':round(t1,3),'words':c})
     r=lambda x:round(x,3)
     T1=S[1]-0.05; tA=wt(1,'escribe',S[1]+(E[1]-S[1])*0.5); tB=E[1]-0.1
@@ -62,11 +63,13 @@ for j in J:
     for w in sw[0][1:]:
         if sw[0][sw[0].index(w)-1][0][-1] in ',?': stamp_t=r(w[1]); break
     te=wt(2,'envío',None)
-    sp={'rec':REC,'crop':[0,520,1180,880],'tot':tot,'total':'70,94 €','t_stamp':stamp_t,'stamp1':j['stamp1'],'t_scene2':r(T1),'t_modal':r(tModal),'t_follow':r(tF),'t_followed':r(tF+1.05),
+    sp={'rec':REC,'crop':[0,520,1180,880],'tot':tot,'total':'70,94 €','t_stamp':stamp_t,'stamp1':j.get('stamp1',['NO PAGUES','ESTO']),'t_scene2':r(T1),'t_modal':r(tModal),'t_follow':r(tF),'t_followed':r(tF+1.05),
         'rmap':rm,'code_letters':[[c,r(tA+0.12+k*step)] for k,c in enumerate(CODE)],'tiles_y':1080,'list_title':'TU PEDIDO EN HACOO',
         'items':[['Casilla del cupón',r(T1+0.1),r(tA-0.1)],['Código',r(tA-0.1),r(tB)],['Tocar Solicitar',r(tB),r(tTap+0.15)],['Descuento real',r(tTap+0.15),r(tDisc)]],
-        't_tap':r(tTap),'t_tiles_off':r(tTap-0.15),'tap_xy':[800,742],'t_disc':r(tDisc),'stamp2':['-25%','SIN FECHA LÍMITE'],'t_ship':r(te) if te else tot+5,'stamp3':['ENVÍO GRATIS'],
-        'handle':'@hacoorabatt','follow':'SEGUIR','followed':'SIGUIENDO','seo':'cupón descuento hacoo · código hacoo noviembre 2026','captions':captions,'theme':j.get('theme',{})}
+        't_tap':r(tTap),'t_tiles_off':r(tTap-0.15),'tap_xy':[810,715],'t_disc':r(tDisc),'stamp2':['-25%','SIN FECHA LÍMITE'],'t_ship':r(te) if te else tot+5,'stamp3':['ENVÍO GRATIS'],
+        'handle':'@hacoorabatt','follow':'SEGUIR','followed':'SIGUIENDO','seo':'cupón descuento hacoo · código hacoo noviembre 2026','captions':captions,'theme':j.get('theme',{}),
+        'price_label':'Tu pedido en Hacoo','price_from':'70,94 €','price_to':'53,20 €','sticker1':j.get('sticker1',['-25%','CÓDIGO']),
+        'steps':[['Código',r(T1+0.1),r(tB)],['Solicitar',r(tB),r(tTap+0.15)],['Ahorra',r(tTap+0.15),r(tDisc)]],'code_label':'TU CÓDIGO','sticker2':['-25%','SIN LÍMITE'],'ship':'Envío gratis','save':j.get('save','Guárdalo')}
     json.dump(sp,open(f"{j['id']}.json",'w'),ensure_ascii=False)
-    json.dump({'tot':tot,'voice':[[f"ex_{j['id']}",0.0]],'song':j['song']},open(f"{j['id']}_base.json",'w'))
+    json.dump({'tot':tot,'voice':[[f"ex_{j['id']}",0.0]],'song':j.get('song','')},open(f"{j['id']}_base.json",'w'))
     print(j['id'],'tot',tot,'S',[r(x) for x in S])
