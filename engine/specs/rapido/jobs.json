@@ -1,0 +1,4 @@
+[{"id":"D1","voice":"Liam","close":"GUÁRDALO","cemo":"pin","chips":["ANTES DE PAGAR","EL CÓDIGO","EL DESCUENTO","GUÁRDALO"],
+  "sents":["¿Vas a pagar en hacoo? ¡Espera!","Toca la casilla del cupón, y escribe pol 25.","Dale a solicitar, ¡y mira el total! 25% menos, y envío gratis.","Guárdalo para tu próximo pedido."]},
+ {"id":"D2","voice":"Liam","close":"SÍGUEME","cemo":"gift","theme":{"bg0":[30,10,58],"bg1":[104,40,170],"acc":[190,255,60],"acc2":[255,214,10]},"chips":["TRUCO RÁPIDO","EL CÓDIGO","EL TOTAL","MÁS CUPONES"],
+  "sents":["Truco rápido para hacoo: 25% de descuento.","En tu pedido, casilla del cupón: escribe pol 25.","Solicitar, ¡y listo! De 70 euros a 53, con envío gratis.","Sígueme para más cupones."]}]
