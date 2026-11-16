@@ -24,7 +24,7 @@ for j in J:
             if sil[i]:
                 k=i
                 while k<len(sil) and sil[k]: k+=1
-                if (k-i)*0.01>0.26 and i>0 and k<len(sil): cuts.append(((i+7)*0.01,(k-7)*0.01))
+                if (k-i)*0.01>0.2 and k<len(sil): cuts.append((max(0,(i+(6 if i>0 else 0))*0.01),(k-6)*0.01))
                 i=k
             else: i+=1
         keep=[]; p=0.0
@@ -65,7 +65,7 @@ for j in J:
         if cur: caps.append(cur)
     captions=[{'t0':r(max(0,c[0][1]-0.06)) if i else 0,'t1':r(caps[i+1][0][1]-0.06) if i+1<len(caps) else dur+1,'words':c} for i,c in enumerate(caps)]
     T1=S[1]-0.12; tA=wt(1,'escribe',S[1]+(E[1]-S[1])*0.5); tB=E[1]-0.05
-    tTap=S[2]+0.35; tRes=tTap+0.3; tSt=tRes+0.7; tM=min(tSt+0.9,E[2]-0.1); tC=S[3]-0.1; tot=round(min(dur,E[-1])+0.55,2)
+    tTap=S[2]+0.35; tRes=tTap+0.3; tSt=tRes+0.7; tM=min(tSt+0.9,E[2]-0.1); tC=S[3]-0.1; tot=round(min(dur,E[-1])+0.12,2)
     rm=[[r(T1),1.3],[r(tA-0.3),2.6],[r(tA),2.95],[r(tB),5.15],[r(S[2]),5.3],[r(tTap-0.25),7.0],[r(tTap),7.3],[r(tTap+0.2),7.5],[r(tM-0.02),8.44],[r(tM),8.5],[r(tM+0.5),9.0],[tot,11.5]]
     xs=[a for a,_ in rm]; assert all(xs[i+1]>xs[i] for i in range(len(xs)-1)),rm
     ts=r(S[0]+(E[0]-S[0])*0.55)
