@@ -18,6 +18,7 @@ def font(sz, name='Montserrat-900.ttf'):
     return _F[k]
 HEAD = 'Anton-Regular.ttf'
 EMO = {os.path.basename(f)[2:-4]: Image.open(f).convert('RGBA') for f in glob.glob(ROOT + 'engine/emo/n_*.png')}
+EMO['check'] = Image.open(ROOT + 'engine/emo/check.png').convert('RGBA')
 def ease(u): u = max(0., min(1., u)); return 1 - (1 - u) ** 3
 def back(u, c=2.2):
     u = max(0., min(1., u)); return 1 + (c + 1) * (u - 1) ** 3 + c * (u - 1) ** 2
@@ -164,7 +165,7 @@ for i in range(n):
             im = Image.new('RGBA', (int(f.getlength(s)) + 70, 230), (0, 0, 0, 0)); dd = ImageDraw.Draw(im)
             dd.rounded_rectangle((10, 10, im.width - 1, 229), 36, fill=(0, 0, 0, 150)); dd.rounded_rectangle((0, 0, im.width - 11, 219), 36, fill=TH['ok'] + (255,)); dd.text((30, 2), s, font=f, fill=(255, 255, 255, 255))
             put(fr, im, W / 2 + 40, 1190 + 500 * uo, k * (1 - 0.2 * uo), 1 - uo, 4)
-            burst(fr, t, h['t_slash'], W / 2, 1150, 'moneyfly', 10, 5)
+            burst(fr, t, h['t_slash'], W / 2, 1150, SP.get('fly', 'check'), 10, 5)
     if T1 <= t < CL['t'] + 0.3:   # móvil con la grabación
         u = back((t - T1) / 0.45, 1.4); uo = ease((t - CL['t']) / 0.3) if t > CL['t'] else 0
         ph, (x0, y0, kx, ky) = phone(t); cy = 690 + 1300 * (1 - u) + 1500 * uo; rot = 1.6 * math.sin(t * 1.7)
@@ -182,7 +183,7 @@ for i in range(n):
         if t >= RES['t']:   # contador del total
             u2 = back((t - RES['t']) / 0.3); v = RES['frm'] + (RES['to'] - RES['frm']) * ease((t - RES['t']) / 0.7)
             put(fr, card(fmt(v), 150, (255, 255, 255), TH['ok'], HEAD, padx=44, pady=12, sh=12), W / 2, 1185 + 1500 * uo, u2 * (1 + 0.06 * math.sin(math.pi * min(1, (t - RES['t']) / 0.9))), 1 - uo, -3)
-            burst(fr, t, RES['t'] + 0.15, W / 2, 1100, 'moneyfly', 14, 9)
+            burst(fr, t, RES['t'] + 0.15, W / 2, 1100, SP.get('fly', 'check'), 12, 9)
         if t >= ST['t']:
             k = 2.2 - 1.2 * ease((t - ST['t']) / 0.18); put(fr, stamp(ST['lines']), 800, 330 + 1500 * uo, k, min(1, (t - ST['t']) / 0.08) * (1 - uo), -10)
         sh_ = SP['ship']
