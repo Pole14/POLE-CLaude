@@ -1,0 +1,4 @@
+[{"id":"E1","voice":"Liam","song":"trend2","theme":{"BG":[232,232,250]},"stamp1":["NO PAGUES","ESTO"],
+  "sents":["Si compras en hacoo, no pagues el precio completo.","Entra en tu pedido, busca la casilla del cupón, y escribe pol 25.","Toca solicitar y ya está: 25% de descuento, y envío gratis.","Guárdalo para tu próximo pedido.","Y sígueme para más cupones."]},
+ {"id":"E2","voice":"Liam","song":"trend4","theme":{"BG":[226,241,232],"BLUE":[20,120,90]},"stamp1":["ESPERA","UN SEGUNDO"],
+  "sents":["¿Vas a pagar en hacoo? Espera un segundo.","Casi todo el mundo se salta la casilla del cupón. Tócala, y escribe pol 25.","Dale a solicitar, y mira el total: 25% menos, y envío gratis.","Ese dinero se queda en tu bolsillo.","Guarda el vídeo para la próxima vez."]}]

@@ -1,0 +1,542 @@
+[
+ {
+  "id": "R1",
+  "lang": "es",
+  "voice": "Charlie",
+  "song": "trend1",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "scenes": [
+   [
+    "cómo tener 25% de descuento en hacoo",
+    [
+     "cómo tener 25% de",
+     "descuento en hacoo |emo:fire|"
+    ]
+   ],
+   [
+    "antes de pagar el precio completo",
+    [
+     "antes de pagar el",
+     "precio completo"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "y dale a solicitar, para aplicar el descuento",
+    [
+     "y dale a solicitar para",
+     "aplicar el descuento"
+    ]
+   ],
+   [
+    "guárdalo para tu próxima compra",
+    [
+     "guárdalo para tu",
+     "próxima compra |emo:pin|"
+    ]
+   ]
+  ],
+  "caption": "cómo tener 25% de descuento en hacoo 🔥"
+ },
+ {
+  "id": "R2",
+  "lang": "es",
+  "voice": "Liam",
+  "song": "trend2",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "así se pone un código en hacoo 👀",
+  "scenes": [
+   [
+    "así se pone un código en hacoo",
+    [
+     "así se pone un",
+     "código en hacoo |emo:eyes|"
+    ]
+   ],
+   [
+    "antes de darle a confirmar",
+    [
+     "antes de darle",
+     "a confirmar"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "pulsa solicitar, y se aplica el 25%",
+    [
+     "pulsa solicitar y se",
+     "aplica el 25%"
+    ]
+   ],
+   [
+    "envíaselo a quien compra en hacoo",
+    [
+     "envíaselo a quien",
+     "compra en hacoo |emo:bag|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R3",
+  "lang": "es",
+  "voice": "Jessica",
+  "song": "trend3",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "si compras en hacoo haz esto antes 👀",
+  "scenes": [
+   [
+    "si compras en hacoo, haz esto antes",
+    [
+     "si compras en hacoo",
+     "haz esto antes |emo:eyes|"
+    ]
+   ],
+   [
+    "ve a la casilla del cupón",
+    [
+     "ve a la casilla",
+     "del cupón"
+    ]
+   ],
+   [
+    "pon el código pol 25",
+    [
+     "pon el código POL25"
+    ]
+   ],
+   [
+    "dale a solicitar, y baja el total",
+    [
+     "dale a solicitar y",
+     "baja el total"
+    ]
+   ],
+   [
+    "guárdalo para tu próximo pedido",
+    [
+     "guárdalo para tu",
+     "próximo pedido |emo:pin|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R4",
+  "lang": "es",
+  "voice": "Will",
+  "song": "trend4",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "truco para pagar menos en hacoo 🔥",
+  "scenes": [
+   [
+    "truco para pagar menos en hacoo",
+    [
+     "truco para pagar",
+     "menos en hacoo |emo:fire|"
+    ]
+   ],
+   [
+    "antes de confirmar tu pedido",
+    [
+     "antes de confirmar",
+     "tu pedido"
+    ]
+   ],
+   [
+    "escribe pol 25 en el cupón",
+    [
+     "escribe POL25 en el cupón"
+    ]
+   ],
+   [
+    "y pulsa solicitar, para tener el 25%",
+    [
+     "y pulsa solicitar para",
+     "tener el 25%"
+    ]
+   ],
+   [
+    "sígueme para más cupones",
+    [
+     "sígueme para",
+     "más cupones |emo:gift|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R5",
+  "lang": "es",
+  "voice": "Chris",
+  "song": "trend5",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "25% de descuento en hacoo ✅",
+  "scenes": [
+   [
+    "25% de descuento en hacoo",
+    [
+     "25% de descuento",
+     "en hacoo |emo:check|"
+    ]
+   ],
+   [
+    "y además con envío gratis",
+    [
+     "y además con",
+     "envío gratis |emo:truck|"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "dale a solicitar, y mira el total",
+    [
+     "dale a solicitar y",
+     "mira el total"
+    ]
+   ],
+   [
+    "comenta si te ha funcionado",
+    [
+     "comenta si te",
+     "ha funcionado |emo:pointdown|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R6",
+  "lang": "es",
+  "voice": "Charlie",
+  "song": "trend1",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "no pagues en hacoo sin poner esto 👀",
+  "scenes": [
+   [
+    "no pagues en hacoo sin poner esto",
+    [
+     "no pagues en hacoo",
+     "sin poner esto |emo:eyes|"
+    ]
+   ],
+   [
+    "en la casilla del cupón",
+    [
+     "en la casilla",
+     "del cupón"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "y dale a solicitar, 25% menos",
+    [
+     "y dale a solicitar:",
+     "25% menos"
+    ]
+   ],
+   [
+    "guárdalo para tu próxima compra",
+    [
+     "guárdalo para tu",
+     "próxima compra |emo:pin|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R7",
+  "lang": "es",
+  "voice": "Liam",
+  "song": "trend2",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "cupón de hacoo sin fecha límite ✅",
+  "scenes": [
+   [
+    "cupón de hacoo sin fecha límite",
+    [
+     "cupón de hacoo",
+     "sin fecha límite |emo:check|"
+    ]
+   ],
+   [
+    "25% de descuento, y envío gratis",
+    [
+     "25% de descuento",
+     "y envío gratis |emo:truck|"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "y dale a solicitar para aplicarlo",
+    [
+     "y dale a solicitar",
+     "para aplicarlo"
+    ]
+   ],
+   [
+    "envíaselo a quien compra en hacoo",
+    [
+     "envíaselo a quien",
+     "compra en hacoo |emo:bag|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R8",
+  "lang": "es",
+  "voice": "Jessica",
+  "song": "trend3",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "envío gratis en hacoo 🚚",
+  "scenes": [
+   [
+    "envío gratis en hacoo",
+    [
+     "envío gratis",
+     "en hacoo |emo:truck|"
+    ]
+   ],
+   [
+    "y un 25% de descuento",
+    [
+     "y un 25% de",
+     "descuento"
+    ]
+   ],
+   [
+    "pon el código pol 25",
+    [
+     "pon el código POL25"
+    ]
+   ],
+   [
+    "pulsa solicitar antes de confirmar",
+    [
+     "pulsa solicitar antes",
+     "de confirmar"
+    ]
+   ],
+   [
+    "preguntas en comentarios",
+    [
+     "preguntas en",
+     "comentarios |emo:pointdown|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R9",
+  "lang": "es",
+  "voice": "Will",
+  "song": "trend4",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "¿pagas el precio completo en hacoo? 👀",
+  "scenes": [
+   [
+    "¿pagas el precio completo en hacoo?",
+    [
+     "¿pagas el precio",
+     "completo en hacoo? |emo:eyes|"
+    ]
+   ],
+   [
+    "prueba esto antes de confirmar",
+    [
+     "prueba esto antes",
+     "de confirmar"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "dale a solicitar, y tienes un 25% menos",
+    [
+     "dale a solicitar y",
+     "tienes un 25% menos"
+    ]
+   ],
+   [
+    "guárdalo para la próxima",
+    [
+     "guárdalo para",
+     "la próxima |emo:pin|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R10",
+  "lang": "es",
+  "voice": "Chris",
+  "song": "trend5",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "tutorial: código de hacoo ✅",
+  "scenes": [
+   [
+    "tutorial, código de hacoo",
+    [
+     "tutorial: código",
+     "de hacoo |emo:check|"
+    ]
+   ],
+   [
+    "abre tu pedido antes de pagar",
+    [
+     "abre tu pedido",
+     "antes de pagar"
+    ]
+   ],
+   [
+    "escribe pol 25 en el cupón",
+    [
+     "escribe POL25 en el cupón"
+    ]
+   ],
+   [
+    "y dale a solicitar, para aplicar el 25%",
+    [
+     "y dale a solicitar para",
+     "aplicar el 25%"
+    ]
+   ],
+   [
+    "sígueme para más cupones",
+    [
+     "sígueme para",
+     "más cupones |emo:gift|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R11",
+  "lang": "es",
+  "voice": "Charlie",
+  "song": "trend1",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "de 70,94 € a 53,20 € en hacoo 🔥",
+  "scenes": [
+   [
+    "de 70 euros a 53 en hacoo",
+    [
+     "de 70,94€ a 53,20€",
+     "en hacoo |emo:fire|"
+    ]
+   ],
+   [
+    "con un solo código",
+    [
+     "con un solo",
+     "código"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "y dale a solicitar, mira cómo baja",
+    [
+     "y dale a solicitar,",
+     "mira cómo baja"
+    ]
+   ],
+   [
+    "comenta si te ha funcionado",
+    [
+     "comenta si te",
+     "ha funcionado |emo:pointdown|"
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "R12",
+  "lang": "es",
+  "voice": "Liam",
+  "song": "trend2",
+  "rec": "rec_p25.mp4",
+  "code": "POL25",
+  "caption": "código hacoo noviembre 2026 ✅",
+  "scenes": [
+   [
+    "código de hacoo, noviembre 2026",
+    [
+     "código hacoo",
+     "noviembre 2026 |emo:check|"
+    ]
+   ],
+   [
+    "25% de descuento, más envío gratis",
+    [
+     "25% de descuento",
+     "+ envío gratis"
+    ]
+   ],
+   [
+    "escribe el código pol 25",
+    [
+     "escribe el código POL25"
+    ]
+   ],
+   [
+    "y pulsa solicitar para aplicarlo",
+    [
+     "y pulsa solicitar",
+     "para aplicarlo"
+    ]
+   ],
+   [
+    "guárdalo para tu próximo pedido",
+    [
+     "guárdalo para tu",
+     "próximo pedido |emo:pin|"
+    ]
+   ]
+  ]
+ }
+]

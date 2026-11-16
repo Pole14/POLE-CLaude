@@ -12,6 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
 SP = json.load(open(sys.argv[1])); OUT = sys.argv[2]
 W, H, FPS = 1080, 1920, 30
 BG = (243, 240, 233); INK = (22, 24, 44); YEL = (255, 214, 64); RED = (226, 44, 62); BLUE = (64, 72, 210); GREY = (200, 200, 208)
+for _k, _v in SP.get('theme', {}).items(): globals()[_k] = tuple(_v)  # tema por vídeo: BG, INK, YEL, RED, BLUE
 _F = {}
 
 
@@ -178,7 +179,7 @@ for i in range(n):
         cl = checklist(t); u2 = ease((t - T1 - 0.15) / 0.35)
         paste_scaled(fr, cl, W / 2 + 7, 1440 + 500 * (1 - u2) - 200 * uo, alpha=1 - uo)
         # letras del código en fichas
-        if t < T2:
+        if t < SP.get('t_tiles_off', T2):
             ls = [(c, tt) for c, tt in SP['code_letters'] if t >= tt]; tile = 118; gap = 14
             x0 = W / 2 - (len(SP['code_letters']) * (tile + gap) - gap) / 2
             for j, (c, tt) in enumerate(ls):
