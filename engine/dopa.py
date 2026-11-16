@@ -106,7 +106,7 @@ def captions(fr, t, big):
                 y += sz * 1.5
             return
 # ---- piezas ----
-def fmt(v): return f"{v:.2f}".replace('.', ',') + ' €'
+def fmt(v): return f"{v:.2f}".replace('.', ',') + SP.get('cur', ' €')
 def price(t):
     h = SP['hook']; f = font(150, HEAD); slash = ease((t - h['t_slash']) / 0.25) if t >= h['t_slash'] else 0
     im = Image.new('RGBA', (760, 420), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
@@ -186,7 +186,10 @@ for i in range(n):
         if t >= ST['t']:
             k = 2.2 - 1.2 * ease((t - ST['t']) / 0.18); put(fr, stamp(ST['lines']), 800, 330 + 1500 * uo, k, min(1, (t - ST['t']) / 0.08) * (1 - uo), -10)
         sh_ = SP['ship']
-        if t >= sh_['t']: put(fr, card(sh_['text'], 62, TH['ink'], TH['card'], emo='truck', padx=30, pady=16), 290, 390 + 1500 * uo, back((t - sh_['t']) / 0.3), 1 - uo, 6)
+        if t >= sh_['t']:
+            sc_ = card(sh_['text'], 62, TH['ink'], TH['card'], emo='truck', padx=30, pady=16)
+            if sc_.width > 620: sc_ = sc_.resize((620, int(sc_.height * 620 / sc_.width)), Image.LANCZOS)
+            put(fr, sc_, 60 + sc_.width / 2, 400 + 1500 * uo, back((t - sh_['t']) / 0.3), 1 - uo, 6)
     if t >= CL['t']:   # cierre
         tc = t - CL['t']
         put(fr, EMO[CL.get('emo', 'pin')].resize((300, 300), Image.LANCZOS), W / 2, 560 - 40 * abs(math.sin(tc * 5)), back((tc - 0.05) / 0.35), 1, -10 + 6 * math.sin(tc * 4))
