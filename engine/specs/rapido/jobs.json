@@ -1,7 +1,7 @@
 [
  {
   "id": "D1",
-  "voice": "Liam",
+  "voice": "Nh2zY9kknu6z4pZy6FhD",
   "close": "GUÁRDALO",
   "cemo": "pin",
   "chips": [
@@ -16,11 +16,12 @@
    "Dale a solicitar, ¡y mira el total! 25% menos, y envío gratis.",
    "Guárdalo para tu próximo pedido."
   ],
-  "song": "trend3"
+  "song": "m3",
+  "voice_name": "David Martin"
  },
  {
   "id": "D2",
-  "voice": "Liam",
+  "voice": "7QQzpAyzlKTVrRzQJmTE",
   "close": "SÍGUEME",
   "cemo": "gift",
   "theme": {
@@ -57,6 +58,7 @@
    "Solicitar, ¡y listo! De 70 euros a 53, con envío gratis.",
    "Sígueme para más cupones."
   ],
-  "song": "trend5"
+  "song": "m6",
+  "voice_name": "Dani"
  }
 ]

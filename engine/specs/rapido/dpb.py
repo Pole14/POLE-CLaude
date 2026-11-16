@@ -10,11 +10,11 @@ def api(path,data=None):
 vs=None; J=json.load(open('jobs.json')); ids=sys.argv[1:]
 for j in J:
     if ids and j['id'] not in ids: continue
-    text=' '.join(j['sents']); wav=f"{V}dp_{j['id']}.wav"; meta=f"{j['id']}_al.json"
+    text=' '.join(x.replace('hacoo','Jacú') for x in j['sents']); wav=f"{V}dp_{j['id']}.wav"; meta=f"{j['id']}_al.json"
     if not os.path.exists(meta):
-        if vs is None: vs={v['name'].split(' ')[0]:v['voice_id'] for v in json.load(api('/v1/voices'))['voices']}
+        if vs is None and len(j['voice'])!=20: vs={v['name'].split(' ')[0]:v['voice_id'] for v in json.load(api('/v1/voices'))['voices']}
         body={'text':text,'model_id':'eleven_multilingual_v2','voice_settings':{'stability':0.45,'similarity_boost':0.8,'style':0.3,'speed':1.12}}
-        r=json.load(api(f"/v1/text-to-speech/{vs[j['voice']]}/with-timestamps?output_format=mp3_44100_128",body))
+        r=json.load(api(f"/v1/text-to-speech/{j['voice'] if len(j['voice'])==20 else vs[j['voice']]}/with-timestamps?output_format=mp3_44100_128",body))
         open('/tmp/_d.mp3','wb').write(base64.b64decode(r['audio_base64']))
         # quita el aire muerto: cada silencio de más de 0,26 s se deja en 0,14 s y las marcas de tiempo se recolocan igual
         import numpy as np
@@ -44,7 +44,7 @@ for j in J:
     assert ''.join(al['characters'])==text
     dur=float(subprocess.run(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',wav],capture_output=True,text=True).stdout)
     sw=[]; p=0
-    for s in j['sents']:
+    for s in [x.replace('hacoo','Jacú') for x in j['sents']]:
         a=text.index(s,p); p=a+len(s); sw.append([[m.group(0),round(cs[a+m.start()],3),round(ce[a+m.end()-1],3)] for m in re.finditer(r'\S+',s)])
     S=[w[0][1] for w in sw]; E=[w[-1][2] for w in sw]; r=lambda x:round(x,3)
     def wt(i,word,default):
@@ -57,7 +57,7 @@ for j in J:
         while k<len(ws):
             w=ws[k]
             if w[0].lower()=='pol' and k+1<len(ws) and ws[k+1][0].strip('.,')=='25': ws2.append([CODE,w[1],ws[k+1][2],True]); k+=2; continue
-            ws2.append([w[0].strip('.,:;').upper(),w[1],w[2],w[0][-1] in '.,:;?!']); k+=1
+            ws2.append([w[0].strip('.,:;').upper().replace('JACÚ','HACOO'),w[1],w[2],w[0][-1] in '.,:;?!']); k+=1
         cur=[]
         for w in ws2:
             cur.append(w[:3])
