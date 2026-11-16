@@ -114,7 +114,29 @@ def deco(im):
 _F = {}
 
 
+def boxline(text, size, ffile, style):
+    """Fuente elegante sin contorno, dentro de una caja redondeada (wbox: texto negro/caja blanca; kbox: texto blanco/caja negra)."""
+    from PIL import ImageFont
+    fk = (ffile, size)
+    if fk not in _F: _F[fk] = ImageFont.truetype(ROOT + 'fonts/' + ffile, size)
+    f = _F[fk]; fg, bg = ((15, 15, 15, 255), (255, 255, 255, 240)) if style == 'wbox' else ((255, 255, 255, 255), (18, 18, 18, 235))
+    items = []; x = 0.0
+    for tk in tokens(text.replace('*', '')):
+        if tk.startswith('|emo:'): items.append(('e', tk[5:-1], x + size * 0.08)); x += size * 1.15; continue
+        items.append(('t', tk, x)); x += f.getlength(tk)
+    asc, desc = f.getmetrics(); px, py = int(size * 0.42), int(size * 0.2)
+    w = int(x + 2 * px); h = int(asc + desc + 2 * py)
+    im = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle([0, 0, w - 1, h - 1], radius=int(size * 0.32), fill=bg)
+    for it in items:
+        if it[0] == 't': d.text((px + it[2], py), it[1], font=f, fill=fg)
+        else: im.alpha_composite(EMO[it[1]].resize((size, size), Image.LANCZOS), (int(px + it[2]), int(py + asc - size * 0.86)))
+    return im
+
+
 def hline(text, size, font):
+    if font and '|' in font:
+        ff, stl = font.split('|'); return boxline(text, size, ff, stl)
     """Una línea estilo TikTok (blanco, contorno negro) con un poco de aire entre letras; *resaltado* y |emo:x|."""
     from PIL import ImageFont
     fk = (font, size)
