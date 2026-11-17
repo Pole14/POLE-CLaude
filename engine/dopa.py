@@ -177,9 +177,10 @@ for i in range(n):
             dd.ellipse((x - r, y - r, x + r, y + r), outline=TH['acc'] + (int(255 * (1 - p)),), width=12); dd.ellipse((x - 26, y - 26, x + 26, y + 26), fill=TH['acc'] + (int(230 * (1 - p)),)); fr.alpha_composite(lay)
         if t < SP['t_tiles_off'] + 0.2:   # letras del código
             ls = SP['tiles']; uo2 = ease((t - SP['t_tiles_off']) / 0.2) if t > SP['t_tiles_off'] else 0
-            xs = W / 2 - (len(ls) * 140 - 16) / 2
+            stp = min(140, 960 / max(1, len(ls))); ksc = stp / 140   # códigos largos: fichas más pequeñas para que quepan
+            xs = W / 2 - (len(ls) * stp - 16 * ksc) / 2
             for j, (c, tt) in enumerate(ls):
-                if t >= tt: put(fr, tile(c), xs + j * 140 + 62, 1185 - 60 * math.sin(math.pi * min(1, (t - tt) / 0.3)) + 200 * uo2, back((t - tt) / 0.22), 1 - uo2, 6 * math.sin(j * 2.1))
+                if t >= tt: put(fr, tile(c), xs + j * stp + 62 * ksc, 1185 - 60 * math.sin(math.pi * min(1, (t - tt) / 0.3)) + 200 * uo2, back((t - tt) / 0.22) * ksc, 1 - uo2, 6 * math.sin(j * 2.1))
         if t >= RES['t']:   # contador del total
             u2 = back((t - RES['t']) / 0.3); v = RES['frm'] + (RES['to'] - RES['frm']) * ease((t - RES['t']) / 0.7)
             put(fr, card(fmt(v), 150, (255, 255, 255), TH['ok'], HEAD, padx=44, pady=12, sh=12), W / 2, 1185 + 1500 * uo, u2 * (1 + 0.06 * math.sin(math.pi * min(1, (t - RES['t']) / 0.9))), 1 - uo, -3)
