@@ -255,7 +255,7 @@ def tokens(line):
 
 tot = sp['tot']; n = int(round(tot * FPS))
 enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
-                        '-c:v', 'libx264', '-crf', '15', '-preset', 'fast', '-pix_fmt', 'yuv420p', OUT], stdin=subprocess.PIPE)
+                        '-c:v', 'libx264', '-crf', '10', '-preset', 'medium', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', OUT], stdin=subprocess.PIPE)
 ONLY = [float(x) for x in os.environ.get('ONLY', '').split(',') if x]
 for i in range(n):
     t = i / FPS
