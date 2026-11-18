@@ -339,7 +339,7 @@ for i in range(n):
             im = line_img(r['text'], r['size'], g.get('font'))
             h_eff = im.height - 88 - 32 + int(r['size'] * g.get('gap', 0.06))
             if t >= r['at']:
-                pi = blur_in(im, (t - r['at']) / 0.42, (r['text'], r['size'])) if r.get('fx') == 'blur' else pop_img(im, (t - r['at']) / 0.2)
+                pi = blur_in(im, (t - r['at']) / 0.42, (r['text'], r['size'])) if r.get('fx') == 'blur' else (im if sp.get('flat') else pop_img(im, (t - r['at']) / 0.2))
                 if fo < 1: pi = pi.copy(); pi.putalpha(pi.getchannel('A').point(lambda v: int(v * fo)))
                 fr.alpha_composite(pi, (int(W / 2 - pi.width / 2), int(y + im.height / 2 - pi.height / 2 - 44)))
             y += h_eff
@@ -354,7 +354,7 @@ for i in range(n):
             im = line_img(text, tx_['size'], tx_.get('font')); full = line_img(tx_['text'], tx_['size'], tx_.get('font'))
             fr.alpha_composite(im, (int(W / 2 - full.width / 2), int(tx_['y'] - 44)))
         else:
-            im = line_img(text, tx_['size'], tx_.get('font')); pi = pop_img(im, (t - tx_['t0']) / 0.2)
+            im = line_img(text, tx_['size'], tx_.get('font')); pi = im if sp.get('flat') else pop_img(im, (t - tx_['t0']) / 0.2)
             fr.alpha_composite(pi, (int(W / 2 - pi.width / 2), int(tx_['y'] + im.height / 2 - pi.height / 2 - 44)))
     for c in sp.get('counters', []):
         if not (c['t0'] <= t < c['t1']): continue
