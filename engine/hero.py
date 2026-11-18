@@ -95,8 +95,10 @@ _C = {}
 
 
 def deco(im):
-    """Sombra suave + brillo en lo resaltado (amarillo)."""
+    """Sombra suave + brillo en lo resaltado (amarillo). flat: mismo hueco, sin sombra ni brillo."""
     P = 44
+    if sp.get('flat'):
+        out = Image.new('RGBA', (im.width + 2 * P, im.height + 2 * P), (0, 0, 0, 0)); out.alpha_composite(im, (P, P)); return out
     out = Image.new('RGBA', (im.width + 2 * P, im.height + 2 * P), (0, 0, 0, 0))
     a = np.array(im); al = a[..., 3]
     sh = Image.new('L', out.size, 0); sh.paste(Image.fromarray(al), (P, P + 6))
