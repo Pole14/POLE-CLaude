@@ -166,7 +166,7 @@ def line_img(text, size, font):
         mw = sp.get('maxw', 930); s_ = size
         if font in ('classic', 'box', 'darkbox'):
             tx_ = (text if text.strip() else ' ').replace('*', '')
-            if font == 'classic': im = tkfont.classic([tx_], s_, EMO, maxw=mw)
+            if font == 'classic': im = tkfont.classic(tx_.split('\n'), s_, EMO, wght=sp.get('wght', 600), stroke=sp.get('stroke') or 4, lh=sp.get('lh', 1.06), maxw=mw)
             elif font == 'box': im = tkfont.box([tx_], int(s_ * 0.86), EMO)
             else: im = tkfont.box([tx_], int(s_ * 0.86), EMO, bg=(20, 20, 20, 255), fg=(255, 255, 255, 255))
             pad = Image.new('RGBA', (im.width + 16, im.height + 24), (0, 0, 0, 0)); pad.alpha_composite(im, (8, 12)); im = pad
