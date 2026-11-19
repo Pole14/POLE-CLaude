@@ -177,6 +177,15 @@ def line_img(text, size, font):
     return _C[k]
 
 
+def soft_pop(im, u):
+    """19 nov: entrada suave estilo TikTok (crece de 0.82 a 1 con un pelín de rebote y aparece en 0.12 s)."""
+    if u >= 1: return im
+    sc = 0.82 + 0.18 * ease(u) + 0.05 * math.sin(math.pi * u)
+    r = im.resize((max(1, int(im.width * sc)), max(1, int(im.height * sc))), Image.LANCZOS)
+    r.putalpha(r.getchannel('A').point(lambda v: int(v * min(1.0, u * 1.8))))
+    return r
+
+
 def pop_img(im, u):
     if u >= 1: return im
     sc = 0.7 + 0.3 * ease(u) + 0.08 * math.sin(math.pi * u)
@@ -358,7 +367,7 @@ for i in range(n):
             im = line_img(text, tx_['size'], tx_.get('font')); full = line_img(tx_['text'], tx_['size'], tx_.get('font'))
             fr.alpha_composite(im, (int(W / 2 - full.width / 2), int(tx_['y'] - 44)))
         else:
-            im = line_img(text, tx_['size'], tx_.get('font')); pi = im if sp.get('flat') else pop_img(im, (t - tx_['t0']) / 0.2)
+            im = line_img(text, tx_['size'], tx_.get('font')); pi = (soft_pop(im, (t - tx_['t0']) / 0.22) if tx_.get('enter') else im) if sp.get('flat') else pop_img(im, (t - tx_['t0']) / 0.2)
             fr.alpha_composite(pi, (int(W / 2 - pi.width / 2), int(tx_['y'] + im.height / 2 - pi.height / 2 - 44)))
     for c in sp.get('counters', []):
         if not (c['t0'] <= t < c['t1']): continue
