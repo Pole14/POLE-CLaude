@@ -365,6 +365,11 @@ for i in range(n):
                 text = ''.join(tk[:max(1, k)]) + '_'
                 if text.count('*') % 2: text += '*'
             im = line_img(text, tx_['size'], tx_.get('font')); full = line_img(tx_['text'], tx_['size'], tx_.get('font'))
+            if tx_.get('letter_pop') and k < len(tk):  # 19 nov: cada letra nueva da un pequeño golpe
+                fl = (len(tk) * min(1.0, (t - tx_['t0']) / tx_['tw'])) % 1.0; sc = 1 + 0.07 * max(0.0, 1 - fl * 2.5)
+                if sc > 1.003:
+                    im = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
+                    fr.alpha_composite(im, (int(W / 2 - full.width * sc / 2), int(tx_['y'] - 44 - (im.height - im.height / sc) / 2))); continue
             fr.alpha_composite(im, (int(W / 2 - full.width / 2), int(tx_['y'] - 44)))
         else:
             im = line_img(text, tx_['size'], tx_.get('font')); pi = (soft_pop(im, (t - tx_['t0']) / 0.22) if tx_.get('enter') else im) if sp.get('flat') else pop_img(im, (t - tx_['t0']) / 0.2)
@@ -372,7 +377,7 @@ for i in range(n):
     for c in sp.get('counters', []):
         if not (c['t0'] <= t < c['t1']): continue
         u = ease((t - c['t0']) / c.get('dur', 0.5)); v = c['frm'] + (c['to'] - c['frm']) * u
-        im = line_img('*' + f'{v:.2f}'.replace('.', ',') + '*' + (c.get('suffix', '') if u >= 1 else ''), c['size'], c.get('font'))
+        im = line_img('*' + f'{v:.2f}'.replace('.', ',') + '*' + (c.get('suffix', '') if (u >= 1 or c.get('always_suffix')) else ''), c['size'], c.get('font'))
         sc = 1 + 0.12 * math.sin(math.pi * min(1.0, (t - c['t0']) / (c.get('dur', 0.5) + 0.25)))
         if abs(sc - 1) > 0.004: im = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
         fr.alpha_composite(im, (int(W / 2 - im.width / 2), int(c['y'] - im.height / 2)))
