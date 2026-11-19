@@ -16,7 +16,9 @@ WGHT = 690
 def font(size, w=WGHT):
     k = (size, w)
     if k not in _F:
-        f = ImageFont.truetype(D + 'fonts/tiktoksans_var.ttf', size); f.set_variation_by_axes([36, 100, w, 0]); _F[k] = f
+        # 19 nov: fuente estática que mandó Pol (TikTok Sans de texto, más abierta = la del editor de TikTok)
+        sw = min((600, 700, 800), key=lambda x: abs(x - w))
+        _F[k] = ImageFont.truetype(D + f'fonts/tiktoksans_static/tiktok-sans-latin-{sw}-normal.ttf', size)
     return _F[k]
 
 

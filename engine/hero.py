@@ -270,7 +270,11 @@ for i in range(n):
     for s_ in sp.get('spots', []):
         if s_['t0'] <= t < s_['t1']:
             fd = s_.get('fade', 0.3); k = min(1.0, (t - s_['t0']) / fd, (s_['t1'] - t) / fd)
-            a = spot_alpha(s_['box'], z, tx, ty) * (s_.get('dim', 0.5) * smooth(k))
+            m0 = spot_alpha(s_['box'], z, tx, ty)
+            if s_.get('blur'):  # 19 nov: desenfoca lo de fuera del foco para que el texto quede limpio
+                bl = cv2.GaussianBlur(arr, (0, 0), s_['blur'] * smooth(k) + 0.01).astype(np.float32)
+                arr = (arr.astype(np.float32) * (1 - m0[..., None]) + bl * m0[..., None]).astype(np.uint8)
+            a = m0 * (s_.get('dim', 0.5) * smooth(k))
             arr = (arr.astype(np.float32) * (1 - a[..., None])).astype(np.uint8)
     for b in sp.get('blurs', []):
         d = abs(t - b['t'])
