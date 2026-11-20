@@ -133,7 +133,16 @@ def tt(lines, size, EMO, maxw=960, stroke=None, maxl=2):
 
 # ---- Estilo "classic" (9 nov 2026): copia 1:1 del texto de TikTok del vídeo PREM100 de la competencia.
 # TikTok Sans variable, peso medio (~600), blanco, contorno negro fino (~4 px a 1080), interlineado apretado.
+COLS = {'red': ((232, 28, 40), 'white'), 'yellow': ((255, 212, 0), 'black'), 'green': ((46, 214, 96), 'black'), 'white': ('white', 'black')}
+
+
 def classic(lines, size, EMO, wght=600, stroke=4, lh=1.06, maxw=1000, maxl=3):
+    # 19 nov: color por línea con prefijo {red} {yellow} {green}
+    cols = []
+    for i, l in enumerate(lines[:maxl]):
+        c = 'white'
+        if l.startswith('{') and '}' in l: c, l = l[1:l.index('}')], l[l.index('}') + 1:]
+        cols.append(COLS.get(c, COLS['white'])); lines[i] = l
     lines = lines[:maxl]
     while size > 30:
         f = font(size, wght)
@@ -147,7 +156,7 @@ def classic(lines, size, EMO, wght=600, stroke=4, lh=1.06, maxw=1000, maxl=3):
         bx = (W - w) / 2; by = 8 + stroke + i * L
         for k, v, ox in items:
             if k == 't':
-                d.text((bx + ox, by), v, font=f, fill='white', stroke_width=stroke, stroke_fill='black')
+                d.text((bx + ox, by), v, font=f, fill=cols[i][0], stroke_width=stroke, stroke_fill=cols[i][1])
             else:
                 e = EMO[v].resize((int(size * 1.0), int(size * 1.0)), Image.LANCZOS)
                 im.alpha_composite(e, (int(bx + ox), int(by + asc - size * 0.86)))

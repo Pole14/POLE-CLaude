@@ -325,6 +325,16 @@ for i in range(n):
             hi.putalpha(hi.getchannel('A').point(lambda q: int(q * max(0.0, al))))
             dx = int(60 * (1 - ease(min(1.0, (x + 0.4) / 0.34))))
             fr.alpha_composite(hi, (int(px - hs * 0.33 + dx), int(py - hs * 0.12 + dx)))
+    # stickers (19 nov): imagen con entrada suave, p. ej. logo navideño de Hacoo
+    for st in sp.get('stickers', []):
+        if st['t0'] <= t < st['t1']:
+            if st['img'] not in _C:
+                im0 = Image.open(ROOT + st['img']).convert('RGBA'); w0 = st.get('w', 360); im0 = im0.resize((w0, int(im0.height * w0 / im0.width)), Image.LANCZOS)
+                if st.get('round'):
+                    mk = Image.new('L', im0.size, 0); ImageDraw.Draw(mk).rounded_rectangle((0, 0, im0.width - 1, im0.height - 1), radius=int(w0 * 0.12), fill=255); im0.putalpha(mk)
+                _C[st['img']] = im0
+            si = soft_pop(_C[st['img']], (t - st['t0']) / 0.25)
+            fr.alpha_composite(si, (int(st['cx'] - si.width / 2), int(st['cy'] - si.height / 2)))
     # destello
     for fl in sp.get('flashes', []):
         x = t - fl
@@ -360,9 +370,11 @@ for i in range(n):
         if not (tx_['t0'] <= t < tx_['t1']): continue
         text = tx_['text']
         if tx_.get('tw'):
+            pre = text[:text.index('}') + 1] if text.startswith('{') else ''; text = text[len(pre):]
             tk = tokens(text); k = int(len(tk) * min(1.0, (t - tx_['t0']) / tx_['tw']))
+            text = pre + text
             if k < len(tk):
-                text = ''.join(tk[:max(1, k)]) + '_'
+                text = pre + ''.join(tk[:max(1, k)]) + '_'
                 if text.count('*') % 2: text += '*'
             im = line_img(text, tx_['size'], tx_.get('font')); full = line_img(tx_['text'], tx_['size'], tx_.get('font'))
             if tx_.get('letter_pop') and k < len(tk):  # 19 nov: cada letra nueva da un pequeño golpe
@@ -373,6 +385,11 @@ for i in range(n):
             fr.alpha_composite(im, (int(W / 2 - full.width / 2), int(tx_['y'] - 44)))
         else:
             im = line_img(text, tx_['size'], tx_.get('font')); pi = (soft_pop(im, (t - tx_['t0']) / 0.22) if tx_.get('enter') else im) if sp.get('flat') else pop_img(im, (t - tx_['t0']) / 0.2)
+            if tx_.get('wipe'):  # 19 nov: barrido de izquierda a derecha
+                uw = min(1.0, (t - tx_['t0']) / 0.4)
+                if uw < 1:
+                    m = Image.new('L', pi.size, 0); ImageDraw.Draw(m).rectangle((0, 0, int(pi.width * ease(uw)), pi.height), fill=255)
+                    pi = pi.copy(); pi.putalpha(Image.composite(pi.getchannel('A'), m, m))
             fr.alpha_composite(pi, (int(W / 2 - pi.width / 2), int(tx_['y'] + im.height / 2 - pi.height / 2 - 44)))
     for c in sp.get('counters', []):
         if not (c['t0'] <= t < c['t1']): continue
