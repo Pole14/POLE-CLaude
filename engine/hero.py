@@ -164,9 +164,10 @@ def line_img(text, size, font):
     k = (text, size, font)
     if k not in _C:
         mw = sp.get('maxw', 930); s_ = size
-        if font in ('classic', 'box', 'darkbox'):
+        if font in ('classic', 'classicbig', 'box', 'darkbox'):
             tx_ = (text if text.strip() else ' ').replace('*', '')
-            if font == 'classic': im = tkfont.classic(tx_.split('\n'), s_, EMO, wght=sp.get('wght', 600), stroke=sp.get('stroke') or 4, lh=sp.get('lh', 1.06), maxw=mw)
+            if font == 'classicbig': im = tkfont.classic(tx_.split('\n'), s_, EMO, wght=800, stroke=10, lh=1.02, maxw=1040)  # 21 nov: gancho grande
+            elif font == 'classic': im = tkfont.classic(tx_.split('\n'), s_, EMO, wght=sp.get('wght', 600), stroke=sp.get('stroke') or 4, lh=sp.get('lh', 1.06), maxw=mw)
             elif font == 'box': im = tkfont.box([tx_], int(s_ * 0.86), EMO)
             else: im = tkfont.box([tx_], int(s_ * 0.86), EMO, bg=(20, 20, 20, 255), fg=(255, 255, 255, 255))
             pad = Image.new('RGBA', (im.width + 16, im.height + 24), (0, 0, 0, 0)); pad.alpha_composite(im, (8, 12)); im = pad
