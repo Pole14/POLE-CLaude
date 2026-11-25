@@ -85,7 +85,7 @@ ENDS = {'fr': ['n_fr_e0', 'n_fr_e1', 'n_fr_e2', 'n_fr_e3', 'cp_fr_e2', 'cp_fr_e3
 END_TXT = {'fr': [["14% de réduction", "+ livraison gratuite |emo:truck|"], ["-14% sur tout", "+ livraison offerte |emo:fire|"], ["-14% de réduction", "+ livraison gratuite |emo:check|"]],
            'es': [["14% de descuento", "+ envío gratis |emo:truck|"], ["-14% en todo", "+ envío gratis |emo:check|"]],
            'en': [["14% off", "+ free delivery |emo:truck|"], ["14% off everything", "+ free delivery |emo:check|"]]}
-SONGS = ['ninao', 'coqueta', 'lolita', 'parisienne', 'free', 'arrochadeira', 'es666', 'gone']
+SONGS = ['ninao', 'coqueta', 'lolita', 'parisienne', 'free', 'arrochadeira', 'es666']
 CAPTION = {'fr': "POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
            'es': "POLE14 = 14% de descuento (hasta 14 €) + envío gratis #hacoo #cuponhacoo #codigohacoo #hacco",
            'en': "POLE14 = 14% off (up to €14) + free delivery #hacoo #hacoocode #discountcode #hacco"}
