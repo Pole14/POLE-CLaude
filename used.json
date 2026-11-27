@@ -46,7 +46,9 @@
   "X4|cp_fr_t11|A",
   "Z1|cp_fr_t13|A",
   "C02|n_fr_h0|B",
-  "A|n_fr_h1|A"
+  "A|n_fr_h1|A",
+  "X4|n_fr_h5|B",
+  "Z1|n_fr_h7|A"
  ],
  "log": [
   {
@@ -230,6 +232,30 @@
    "code": "pole14",
    "tot": 10.8,
    "made": "2026-11-25T02:21:35"
+  },
+  {
+   "file": "out/2026-11-29_fr_B_X4_n_fr_h5.mp4",
+   "lang": "fr",
+   "fmt": "B",
+   "base": "X4",
+   "hook": "n_fr_h5",
+   "song": "lolita",
+   "caption": "code promo hacoo avec livraison gratuite 🚚 POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "code": "pole14",
+   "tot": 10.8,
+   "made": "2026-11-27T02:14:57"
+  },
+  {
+   "file": "out/2026-11-30_fr_A_Z1_n_fr_h7.mp4",
+   "lang": "fr",
+   "fmt": "A",
+   "base": "Z1",
+   "hook": "n_fr_h7",
+   "song": "parisienne",
+   "caption": "comment mettre un code sur hacoo ✅ POLE14 = -14% (jusqu'à 14 €) + livraison gratuite #hacoo #codepromohacoo #hacco #codereduction",
+   "code": "pole14",
+   "tot": 10.6,
+   "made": "2026-11-27T02:15:22"
   }
  ]
 }
